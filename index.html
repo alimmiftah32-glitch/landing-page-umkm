@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Landing Page UMKM — Portofolio</title>
+<meta name="description" content="Jasa landing page untuk UMKM Indonesia. Mobile-first, dengan form dan katalog yang menyusun pesan WhatsApp otomatis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap">
+<style>
+:root{
+  --bg:#fbfaf8; --card:#fff; --ink:#1a211f; --ink-2:#5c6b66; --ink-3:#8b9993;
+  --line:#e6e4de; --accent:#0f766e; --accent-2:#0b5c56; --accent-soft:#e2f0ee;
+  --warm:#b4692f; --wa:#25d366;
+  --font:"Plus Jakarta Sans","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+h1,h2,h3{margin:0;line-height:1.15;letter-spacing:-.025em;font-weight:800;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+
+.hero{padding:64px 0 52px;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(32px,6.4vw,50px);margin:14px 0 18px;max-width:17ch}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{color:var(--ink-2);font-size:17.5px;max-width:56ch}
+.cta{display:flex;flex-wrap:wrap;gap:11px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;
+  text-decoration:none;font-weight:600;font-size:15px;padding:12px 22px;border-radius:9px;
+  transition:.15s;font-family:inherit;border:0;cursor:pointer}
+.btn:hover{background:var(--accent-2)}
+.btn.alt{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+.btn.alt:hover{border-color:var(--accent);color:var(--accent)}
+
+section{padding:56px 0}
+.shead{margin-bottom:30px}
+.shead h2{font-size:clamp(24px,4.4vw,32px);margin:9px 0 10px}
+.shead p{color:var(--ink-2);max-width:58ch}
+
+.demos{display:grid;gap:20px;grid-template-columns:1fr}
+.demo{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;flex-direction:column;transition:.18s}
+.demo:hover{border-color:var(--accent);transform:translateY(-3px);
+  box-shadow:0 12px 32px rgba(26,33,31,.08)}
+.cap{height:132px;display:grid;place-items:center;font-size:44px}
+.c1{background:linear-gradient(145deg,#e9d5c0,#c99a6e)}
+.c2{background:linear-gradient(145deg,#cfe0f2,#7fa9d6)}
+.c3{background:linear-gradient(145deg,#d5e6cf,#84b378)}
+.dbody{padding:20px;display:flex;flex-direction:column;flex:1}
+.demo h3{font-size:17.5px;margin-bottom:6px}
+.demo>.dbody>p{color:var(--ink-2);font-size:14.5px;flex:1}
+.fitur{list-style:none;padding:0;margin:14px 0 18px;display:grid;gap:6px;font-size:13.5px;color:var(--ink-2)}
+.fitur li{display:flex;gap:8px}
+.fitur i{color:var(--accent);font-style:normal;font-weight:700;flex:none}
+.demo .btn{width:100%;justify-content:center;font-size:14.5px;padding:11px}
+
+.harga{display:grid;gap:16px;grid-template-columns:1fr}
+.paket{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:24px;
+  display:flex;flex-direction:column}
+.paket.unggul{border-color:var(--accent);position:relative;
+  box-shadow:0 12px 32px rgba(15,118,110,.1)}
+.tandanya{position:absolute;top:-11px;left:24px;background:var(--accent);color:#fff;font-size:11px;
+  font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 11px;border-radius:6px}
+.paket h3{font-size:16.5px;font-weight:600;color:var(--ink-2)}
+.paket .rp{font-size:30px;font-weight:800;letter-spacing:-.03em;margin:8px 0 3px}
+.paket .lama{font-size:13.5px;color:var(--ink-3)}
+.paket ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:8px;font-size:14.5px;flex:1}
+.paket li{display:flex;gap:9px}
+.paket li i{color:var(--accent);font-style:normal;font-weight:700;flex:none}
+
+.beda{background:var(--accent-soft);border-radius:16px;padding:32px 26px;margin-top:8px}
+.beda h2{font-size:clamp(22px,4vw,29px);margin-bottom:14px;max-width:20ch}
+.beda p{color:#255d58;font-size:15.5px;max-width:60ch;margin-bottom:12px}
+.beda p:last-child{margin-bottom:0}
+.beda b{color:#0b3d39}
+
+.kontak{border-top:1px solid var(--line);margin-top:20px;padding:52px 0 0;text-align:center}
+.kontak h2{font-size:clamp(23px,4.2vw,31px);margin-bottom:12px}
+.kontak p{color:var(--ink-2);max-width:48ch;margin:0 auto 24px}
+footer{padding:44px 0 40px;color:var(--ink-3);font-size:13.5px;text-align:center}
+
+@media(min-width:780px){
+  .demos{grid-template-columns:repeat(3,1fr)}
+  .harga{grid-template-columns:repeat(3,1fr)}
+  .beda{padding:44px 40px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Landing page untuk UMKM</div>
+  <h1>Website yang bikin orang <em>menekan tombol WhatsApp</em>.</h1>
+  <p>Kebanyakan website UMKM gagal di satu hal yang sama: pengunjung datang, lihat-lihat, lalu pergi tanpa menghubungi. Saya bikin halaman yang tugasnya cuma satu — mengubah pengunjung jadi chat masuk.</p>
+  <div class="cta">
+    <a class="btn" href="#contoh">Lihat 3 contoh</a>
+    <a class="btn alt" href="#harga">Cek harga</a>
+  </div>
+</div></header>
+
+<main>
+<section id="contoh"><div class="wrap">
+  <div class="shead">
+    <div class="eyebrow">Contoh hasil kerja</div>
+    <h2>Bisa langsung dicoba</h2>
+    <p>Ketiganya bisnis fiktif yang saya buat sebagai contoh. Semuanya berfungsi penuh — klik tombolnya, isi formnya, lihat sendiri pesan WhatsApp-nya tersusun.</p>
+  </div>
+
+  <div class="demos">
+    <article class="demo">
+      <div class="cap c1">☕</div>
+      <div class="dbody">
+        <h3>Kedai kopi</h3>
+        <p>Untuk bisnis kuliner yang perlu menampilkan menu, jam buka, dan lokasi.</p>
+        <ul class="fitur">
+          <li><i>→</i> Menu dengan harga</li>
+          <li><i>→</i> Tombol WhatsApp melayang</li>
+          <li><i>→</i> Ulasan pelanggan &amp; jam operasional</li>
+        </ul>
+        <a class="btn" href="demo/01-kafe-kopi-ranting.html">Buka contoh</a>
+      </div>
+    </article>
+
+    <article class="demo">
+      <div class="cap c2">🧺</div>
+      <div class="dbody">
+        <h3>Jasa dengan booking</h3>
+        <p>Untuk laundry, servis, klinik — apa pun yang pelanggannya perlu memesan jadwal.</p>
+        <ul class="fitur">
+          <li><i>→</i> Form jadwal penjemputan</li>
+          <li><i>→</i> Estimasi biaya otomatis</li>
+          <li><i>→</i> Pesan WA terisi lengkap sendiri</li>
+        </ul>
+        <a class="btn" href="demo/02-jasa-laundry-kilat.html">Buka contoh</a>
+      </div>
+    </article>
+
+    <article class="demo">
+      <div class="cap c3">🌿</div>
+      <div class="dbody">
+        <h3>Katalog produk</h3>
+        <p>Untuk yang jualan banyak item — skincare, herbal, fashion, makanan kemasan.</p>
+        <ul class="fitur">
+          <li><i>→</i> Katalog dengan filter kategori</li>
+          <li><i>→</i> Keranjang belanja</li>
+          <li><i>→</i> Checkout jadi pesan WA rapi</li>
+        </ul>
+        <a class="btn" href="demo/03-katalog-produk-sari-bumi.html">Buka contoh</a>
+      </div>
+    </article>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="beda">
+    <h2>Bedanya di mana dengan website biasa?</h2>
+    <p>Website biasa kasih kamu formulir kontak, lalu email masuk yang sering tidak dibaca. Di Indonesia, transaksi terjadi di WhatsApp — jadi itu yang saya jadikan tujuan akhirnya.</p>
+    <p>Saat pelanggan menekan tombol pesan, <b>chat WhatsApp-nya sudah terisi lengkap</b>: produk apa, berapa banyak, total harga, alamat. Kamu tinggal balas "siap, diproses" — tidak perlu tanya ulang satu per satu.</p>
+    <p>Halamannya juga <b>dibuat dari layar HP dulu</b>, baru dibesarkan ke desktop. Karena hampir semua pelanggan UMKM datang dari HP, bukan komputer.</p>
+  </div>
+</div></section>
+
+<section id="harga"><div class="wrap">
+  <div class="shead">
+    <div class="eyebrow">Harga</div>
+    <h2>Tiga paket, tanpa biaya tersembunyi</h2>
+    <p>DP 50% untuk mulai, sisanya setelah kamu setujui hasilnya. Domain dan hosting dibeli atas namamu sendiri.</p>
+  </div>
+  <div class="harga">
+    <div class="paket">
+      <h3>Kilat</h3>
+      <div class="rp">Rp 1,5 jt</div>
+      <div class="lama">3–5 hari kerja</div>
+      <ul>
+        <li><i>✓</i> 1 halaman lengkap</li>
+        <li><i>✓</i> Tombol WhatsApp melayang</li>
+        <li><i>✓</i> Desain mobile-first</li>
+        <li><i>✓</i> Copywriting Indonesia</li>
+        <li><i>✓</i> 1× revisi</li>
+      </ul>
+    </div>
+    <div class="paket unggul">
+      <div class="tandanya">Paling pas</div>
+      <h3>Bisnis</h3>
+      <div class="rp">Rp 2,5 jt</div>
+      <div class="lama">5–7 hari kerja</div>
+      <ul>
+        <li><i>✓</i> Semua isi paket Kilat</li>
+        <li><i>✓</i> Form pesanan → WA otomatis</li>
+        <li><i>✓</i> Estimasi harga otomatis</li>
+        <li><i>✓</i> Google Maps terpasang</li>
+        <li><i>✓</i> 2× revisi</li>
+      </ul>
+    </div>
+    <div class="paket">
+      <h3>Toko</h3>
+      <div class="rp">Rp 4 jt</div>
+      <div class="lama">7–10 hari kerja</div>
+      <ul>
+        <li><i>✓</i> Semua isi paket Bisnis</li>
+        <li><i>✓</i> Katalog produk + filter</li>
+        <li><i>✓</i> Keranjang belanja</li>
+        <li><i>✓</i> Checkout jadi pesan WA</li>
+        <li><i>✓</i> 3× revisi</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section class="kontak"><div class="wrap">
+  <h2>Mau lihat mockup pakai nama bisnismu?</h2>
+  <p>Kirim nama bisnis dan apa yang kamu jual. Saya buatkan contohnya dulu — gratis, tanpa kewajiban lanjut.</p>
+  <a class="btn" href="#" id="hubungi">💬 Hubungi saya</a>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  Dibuat dengan HTML biasa — tanpa plugin berat, tanpa biaya bulanan platform.
+</div></footer>
+
+</body>
+</html>

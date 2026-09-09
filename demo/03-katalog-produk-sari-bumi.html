@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sari Bumi — Herbal &amp; Madu Asli, Pesan via WhatsApp</title>
+<meta name="description" content="Madu hutan, jamu, dan minyak herbal asli dari petani lokal. Pesan langsung lewat WhatsApp.">
+<style>
+:root{
+  --ink:#1a2418; --soft:#5f7059; --line:#e4ebe1; --bg:#f7faf5; --card:#fff;
+  --brand:#2f7d32; --brand-dark:#245e26; --gold:#c9922b; --wa:#25d366;
+  --r:14px; --sh:0 1px 2px rgba(26,36,24,.05),0 10px 28px rgba(26,36,24,.07);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 ui-sans-serif,system-ui,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em;margin:0}
+a{color:inherit}
+.demo{position:fixed;top:0;left:0;z-index:99;background:#1a2418;color:#fff;font-size:11px;
+  letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-bottom-right-radius:8px}
+
+header{position:sticky;top:0;z-index:50;background:rgba(247,250,245,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:18px;letter-spacing:-.02em;text-decoration:none}
+.logo span{width:30px;height:30px;border-radius:50%;background:var(--brand);display:grid;place-items:center;font-size:15px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--brand);color:#fff;
+  text-decoration:none;font-weight:650;font-size:15px;padding:11px 20px;border-radius:10px;border:0;cursor:pointer;
+  transition:.15s;font-family:inherit}
+.btn:hover{background:var(--brand-dark)}
+.btn-wa{background:var(--wa)}.btn-wa:hover{background:#1da851}
+.btn-line{background:#fff;color:var(--brand);border:1.5px solid var(--line)}
+.btn-line:hover{border-color:var(--brand)}
+.btn-sm{padding:8px 14px;font-size:13.5px;border-radius:8px}
+.cart-btn{position:relative}
+.cart-btn b{position:absolute;top:-6px;right:-6px;background:var(--gold);color:#2b1e00;font-size:11px;
+  min-width:19px;height:19px;border-radius:999px;display:grid;place-items:center;font-weight:800;padding:0 5px}
+
+.hero{padding:48px 0 40px;display:grid;gap:30px;align-items:center}
+.badge{display:inline-flex;gap:7px;align-items:center;background:#e8f3e6;color:var(--brand-dark);font-size:13px;
+  font-weight:650;padding:6px 13px;border-radius:999px}
+.hero h1{font-size:clamp(32px,6.5vw,50px);font-weight:800;margin:16px 0 14px}
+.hero p{color:var(--soft);font-size:17px;max-width:45ch;margin:0 0 24px}
+.cta-row{display:flex;flex-wrap:wrap;gap:11px}
+.hero-art{border-radius:20px;aspect-ratio:5/4;background:linear-gradient(150deg,#7fb069,#245e26 75%);
+  display:grid;place-items:center;color:#fff;text-align:center;font-size:14px;padding:24px;box-shadow:var(--sh)}
+.hero-art b{display:block;font-size:46px;line-height:1;margin-bottom:10px}
+
+.strip{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border-block:1px solid var(--line)}
+.strip div{background:var(--bg);padding:16px 14px;text-align:center;font-size:13px;color:var(--soft)}
+.strip b{display:block;font-size:15px;color:var(--ink);font-weight:700;margin-bottom:2px}
+
+section{padding:52px 0}
+.head{margin-bottom:28px}
+.head h2{font-size:clamp(25px,4.5vw,34px);font-weight:800;margin-bottom:9px}
+.head p{color:var(--soft);margin:0;max-width:52ch}
+
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;
+  font-weight:600;cursor:pointer;color:var(--soft);transition:.15s;font-family:inherit}
+.chip:hover{border-color:var(--brand)}
+.chip.on{background:var(--brand);border-color:var(--brand);color:#fff}
+
+.cards{display:grid;gap:18px;grid-template-columns:repeat(2,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;
+  flex-direction:column;transition:.15s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:#cfe0cb}
+.ph{aspect-ratio:1/1;display:grid;place-items:center;font-size:46px;background:#eef5ec;position:relative}
+.lbl{position:absolute;top:10px;left:10px;background:var(--gold);color:#2b1e00;font-size:10.5px;font-weight:800;
+  letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:5px}
+.body{padding:15px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:15.5px;font-weight:700;margin-bottom:4px}
+.card .d{font-size:13px;color:var(--soft);margin:0 0 10px;line-height:1.5;flex:1}
+.pr{display:flex;align-items:baseline;gap:7px;margin-bottom:11px}
+.pr b{font-size:18px;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
+.pr s{font-size:13px;color:#a3b09f;white-space:nowrap}
+
+/* cart drawer */
+.ov{position:fixed;inset:0;background:rgba(26,36,24,.45);z-index:80;opacity:0;pointer-events:none;transition:.2s}
+.ov.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(400px,100%);background:#fff;z-index:90;
+  transform:translateX(100%);transition:.25s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column}
+.drawer.on{transform:none}
+.dhead{padding:20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.dhead h3{font-size:18px;font-weight:800}
+.x{background:none;border:0;font-size:24px;cursor:pointer;color:var(--soft);line-height:1;padding:0 4px}
+.ditems{flex:1;overflow-y:auto;padding:16px 20px}
+.ci{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);align-items:center}
+.ci .im{width:48px;height:48px;border-radius:9px;background:#eef5ec;display:grid;place-items:center;font-size:22px;flex:none}
+.ci h4{margin:0 0 2px;font-size:14.5px;font-weight:650}
+.ci small{color:var(--soft);font-size:13px}
+.qty{display:flex;align-items:center;gap:9px;margin-left:auto;flex:none}
+.qty button{width:26px;height:26px;border:1.5px solid var(--line);background:#fff;border-radius:7px;cursor:pointer;
+  font-size:15px;line-height:1;color:var(--brand);font-weight:700;font-family:inherit}
+.qty button:hover{border-color:var(--brand)}
+.qty span{min-width:16px;text-align:center;font-weight:650;font-size:14.5px}
+.empty{text-align:center;color:var(--soft);padding:50px 20px;font-size:14.5px}
+.dfoot{padding:20px;border-top:1px solid var(--line);background:#fafcf9}
+.tot{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;font-size:14.5px}
+.tot b{font-size:22px;font-weight:800;letter-spacing:-.03em}
+.dfoot small{display:block;color:var(--soft);font-size:12.5px;margin-bottom:14px}
+.dfoot .btn{width:100%;padding:14px}
+
+.faq details{background:#fff;border:1px solid var(--line);border-radius:11px;padding:15px 18px;margin-bottom:10px}
+.faq summary{font-weight:650;cursor:pointer;font-size:15.5px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:right;color:var(--brand);font-weight:800}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin:10px 0 0;color:var(--soft);font-size:14.5px}
+
+footer{border-top:1px solid var(--line);padding:30px 0 40px;font-size:13.5px;color:var(--soft)}
+.foot{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
+
+@media(min-width:820px){
+  .hero{grid-template-columns:1.05fr .95fr;padding:66px 0 52px;gap:48px}
+  .cards{grid-template-columns:repeat(4,1fr)}
+  .strip{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:520px){nav{height:58px;gap:10px}.logo{font-size:15.5px;white-space:nowrap;gap:7px}.logo span{width:26px;height:26px;font-size:13px}nav .btn{padding:9px 13px;font-size:13px;white-space:nowrap}}.demo{top:auto;bottom:0;border-bottom-right-radius:0;border-top-right-radius:8px}
+</style>
+</head>
+<body>
+<div class="demo">Demo portofolio — bisnis fiktif</div>
+
+<header><nav class="wrap">
+  <a class="logo" href="#"><span>🌿</span> Sari Bumi</a>
+  <button class="btn btn-line btn-sm cart-btn" id="open">🛒 Keranjang <b id="count">0</b></button>
+</nav></header>
+
+<main><div class="wrap">
+  <div class="hero">
+    <div>
+      <div class="badge">🌿 Langsung dari 12 petani mitra</div>
+      <h1>Herbal asli, tanpa oplosan.</h1>
+      <p>Madu hutan, jamu, dan minyak herbal yang kami ambil sendiri dari petani di Jawa dan Sumatera. Setiap batch punya nomor uji lab — bisa kamu cek.</p>
+      <div class="cta-row">
+        <a class="btn" href="#produk">Lihat produk</a>
+        <a class="btn btn-line" href="#faq">Cek keaslian</a>
+      </div>
+    </div>
+    <div class="hero-art"><div><b>🍯</b>Foto produk / kebun mitra<br><small>(diganti foto asli klien)</small></div></div>
+  </div>
+</div>
+
+<div class="strip">
+  <div><b>COD</b>se-Jabodetabek</div>
+  <div><b>Uji lab</b>tiap batch</div>
+  <div><b>Gratis ongkir</b>min. Rp150rb</div>
+  <div><b>Garansi</b>uang kembali</div>
+</div>
+
+<div class="wrap">
+  <section id="produk">
+    <div class="head"><h2>Produk kami</h2>
+      <p>Pilih, masukkan keranjang, lalu pesanan otomatis terkirim rapi ke WhatsApp kami.</p></div>
+    <div class="filters">
+      <button class="chip on" data-f="all">Semua</button>
+      <button class="chip" data-f="madu">Madu</button>
+      <button class="chip" data-f="jamu">Jamu</button>
+      <button class="chip" data-f="minyak">Minyak</button>
+    </div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section id="faq">
+    <div class="head"><h2>Yang biasanya ditanyakan</h2></div>
+    <div class="faq">
+      <details open><summary>Bagaimana saya tahu madunya asli?</summary>
+        <p>Tiap botol punya kode batch di label. Kirim kodenya lewat WhatsApp, kami balas dengan foto hasil uji lab (kadar air, HMF, dan diastase) untuk batch tersebut.</p></details>
+      <details><summary>Bisa COD?</summary>
+        <p>Bisa untuk Jabodetabek. Di luar itu pakai transfer atau QRIS, dikirim via JNE/J&amp;T dengan resi dikirim hari yang sama.</p></details>
+      <details><summary>Kalau produk rusak atau bocor saat sampai?</summary>
+        <p>Foto paket sebelum dibuka, kirim ke WA kami. Kami kirim ulang gratis atau kembalikan uang penuh — kamu yang pilih.</p></details>
+      <details><summary>Ada harga khusus untuk reseller?</summary>
+        <p>Ada, mulai pembelian 12 pcs campur boleh. Chat WA dengan kata kunci "reseller" untuk dapat daftar harganya.</p></details>
+    </div>
+  </section>
+</div></main>
+
+<footer><div class="wrap foot">
+  <div>© 2026 Sari Bumi · Jl. Raya Bogor KM 30, Depok</div>
+  <div>0812‑0000‑0000 · Instagram @saribumi.id</div>
+</div></footer>
+
+<div class="ov" id="ov"></div>
+<aside class="drawer" id="drawer" aria-label="Keranjang belanja">
+  <div class="dhead"><h3>Keranjang</h3><button class="x" id="close" aria-label="Tutup">×</button></div>
+  <div class="ditems" id="ditems"></div>
+  <div class="dfoot">
+    <div class="tot"><span>Total</span><b id="total">Rp 0</b></div>
+    <small>Ongkir dihitung setelah kamu kirim alamat lewat WhatsApp.</small>
+    <button class="btn btn-wa" id="checkout">💬 Pesan via WhatsApp</button>
+  </div>
+</aside>
+
+<script>
+(function(){
+  var WA = "6281200000000"; // diganti nomor asli klien
+
+  var PRODUK = [
+    {id:1, n:"Madu Hutan Sumbawa 500ml", c:"madu", e:"🍯", h:145000, s:175000, t:"Best seller",
+     d:"Dipanen liar dari hutan Sumbawa. Kental, sedikit asam, tidak dipanaskan."},
+    {id:2, n:"Madu Kelengkeng 250ml", c:"madu", e:"🫙", h:78000, s:null, t:null,
+     d:"Manis lembut, favorit anak-anak. Cocok dicampur susu atau teh."},
+    {id:3, n:"Madu Propolis 100ml", c:"madu", e:"🐝", h:120000, s:null, t:null,
+     d:"Ekstrak propolis murni untuk daya tahan tubuh. Pakai 3 tetes per hari."},
+    {id:4, n:"Jamu Kunyit Asam 6 btl", c:"jamu", e:"🥤", h:65000, s:null, t:null,
+     d:"Diseduh segar tiap Senin &amp; Kamis, tanpa pengawet. Simpan di kulkas."},
+    {id:5, n:"Jamu Beras Kencur 6 btl", c:"jamu", e:"🍶", h:65000, s:null, t:null,
+     d:"Hangat di badan, enak diminum pagi sebelum aktivitas."},
+    {id:6, n:"Serbuk Jahe Merah 200g", c:"jamu", e:"🫚", h:48000, s:58000, t:"Hemat",
+     d:"Tanpa gula tambahan. Seduh 1 sdt dengan air panas."},
+    {id:7, n:"Minyak Kelapa Murni 250ml", c:"minyak", e:"🥥", h:55000, s:null, t:null,
+     d:"Cold-pressed, bisa untuk masak, kulit, maupun rambut."},
+    {id:8, n:"Minyak Kayu Putih 100ml", c:"minyak", e:"🌱", h:38000, s:null, t:"Baru",
+     d:"Destilasi dari daun kayu putih Maluku. Hangat, tidak menyengat."}
+  ];
+
+  var cart = {}, filter = "all";
+  var $ = function(id){ return document.getElementById(id); };
+  function rp(n){ return "Rp " + n.toLocaleString('id-ID'); }
+
+  function renderCards(){
+    $('cards').innerHTML = PRODUK.filter(function(p){
+      return filter === "all" || p.c === filter;
+    }).map(function(p){
+      return '<article class="card">' +
+        '<div class="ph">' + p.e + (p.t ? '<span class="lbl">'+p.t+'</span>' : '') + '</div>' +
+        '<div class="body"><h3>'+p.n+'</h3><p class="d">'+p.d+'</p>' +
+        '<div class="pr"><b>'+rp(p.h)+'</b>'+(p.s?'<s>'+rp(p.s)+'</s>':'')+'</div>' +
+        '<button class="btn btn-sm" data-add="'+p.id+'">+ Keranjang</button>' +
+        '</div></article>';
+    }).join('');
+  }
+
+  function renderCart(){
+    var ids = Object.keys(cart), total = 0, n = 0;
+    if(!ids.length){
+      $('ditems').innerHTML = '<div class="empty">Keranjang masih kosong.<br>Pilih produk dulu ya. 🌿</div>';
+    } else {
+      $('ditems').innerHTML = ids.map(function(id){
+        var p = PRODUK.filter(function(x){return x.id == id;})[0], q = cart[id];
+        total += p.h * q; n += q;
+        return '<div class="ci"><div class="im">'+p.e+'</div>' +
+          '<div><h4>'+p.n+'</h4><small>'+rp(p.h)+'</small></div>' +
+          '<div class="qty"><button data-dec="'+id+'">−</button><span>'+q+'</span>' +
+          '<button data-inc="'+id+'">+</button></div></div>';
+      }).join('');
+    }
+    $('total').textContent = rp(total);
+    $('count').textContent = n;
+  }
+
+  function add(id){ cart[id] = (cart[id]||0) + 1; renderCart(); open(); }
+  function open(){ $('drawer').classList.add('on'); $('ov').classList.add('on'); }
+  function close(){ $('drawer').classList.remove('on'); $('ov').classList.remove('on'); }
+
+  document.addEventListener('click', function(e){
+    var t = e.target;
+    if(t.dataset.add) add(t.dataset.add);
+    if(t.dataset.inc){ cart[t.dataset.inc]++; renderCart(); }
+    if(t.dataset.dec){
+      var id = t.dataset.dec;
+      if(--cart[id] <= 0) delete cart[id];
+      renderCart();
+    }
+    if(t.dataset.f){
+      filter = t.dataset.f;
+      document.querySelectorAll('.chip').forEach(function(c){ c.classList.toggle('on', c === t); });
+      renderCards();
+    }
+  });
+
+  $('open').addEventListener('click', open);
+  $('close').addEventListener('click', close);
+  $('ov').addEventListener('click', close);
+
+  $('checkout').addEventListener('click', function(){
+    var ids = Object.keys(cart);
+    if(!ids.length){ alert("Keranjang masih kosong."); return; }
+    var total = 0;
+    var baris = ids.map(function(id){
+      var p = PRODUK.filter(function(x){return x.id == id;})[0], q = cart[id];
+      total += p.h * q;
+      return "• " + p.n + " ×" + q + " — " + rp(p.h * q);
+    }).join("\n");
+    var pesan = "Halo Sari Bumi, saya mau pesan:\n\n" + baris +
+      "\n\nTotal: " + rp(total) +
+      "\n\nNama:\nAlamat lengkap:\nMetode bayar (COD / transfer / QRIS):";
+    window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(pesan), "_blank");
+  });
+
+  renderCards(); renderCart();
+})();
+</script>
+</body>
+</html>

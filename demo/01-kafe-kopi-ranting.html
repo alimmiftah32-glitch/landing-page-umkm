@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kopi Ranting — Kedai Kopi &amp; Ruang Kerja</title>
+<meta name="description" content="Kedai kopi specialty di Jogja. Biji lokal single origin, wifi kencang, buka sampai malam.">
+<style>
+:root{
+  --ink:#231a15; --ink-soft:#6b5a4e; --line:#e7ded6;
+  --bg:#fbf7f3; --card:#fff; --brand:#8b4a2b; --brand-dark:#6d3820;
+  --accent:#d9a441; --wa:#25d366;
+  --r:14px; --shadow:0 1px 2px rgba(35,26,21,.06),0 8px 24px rgba(35,26,21,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 ui-sans-serif,system-ui,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em;margin:0}
+a{color:inherit}
+
+/* demo marker */
+.demo{position:fixed;top:0;left:0;z-index:99;background:#231a15;color:#fbf7f3;
+  font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-bottom-right-radius:8px}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(251,247,243,.88);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:-.02em;font-size:18px}
+.logo span{width:28px;height:28px;border-radius:50%;background:var(--brand);display:grid;place-items:center;
+  color:#fff;font-size:14px}
+.links{display:none;gap:28px;font-size:14.5px;color:var(--ink-soft);font-weight:500}
+.links a{text-decoration:none}.links a:hover{color:var(--brand)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;text-decoration:none;
+  font-weight:650;font-size:14.5px;padding:11px 20px;border-radius:999px;transition:.15s;border:0;cursor:pointer}
+.btn:hover{background:var(--brand-dark)}
+.btn-wa{background:var(--wa)}.btn-wa:hover{background:#1da851}
+.btn-ghost{background:transparent;color:var(--brand);border:1.5px solid var(--line)}
+.btn-ghost:hover{background:#fff;border-color:var(--brand)}
+
+/* hero */
+.hero{padding:56px 0 44px;display:grid;gap:34px}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--brand);
+  background:#f3e7dd;padding:6px 13px;border-radius:999px;width:fit-content}
+.hero h1{font-size:clamp(34px,7vw,54px);font-weight:800;margin:16px 0 14px}
+.hero p{color:var(--ink-soft);font-size:17px;max-width:46ch;margin:0 0 26px}
+.cta-row{display:flex;flex-wrap:wrap;gap:11px}
+.hero-img{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;
+  background:linear-gradient(150deg,#c98a5e,#6d3820 70%);position:relative;display:grid;place-items:center}
+.hero-img div{color:#fff;text-align:center;opacity:.9;font-size:14px;padding:20px}
+.hero-img b{display:block;font-size:44px;line-height:1;margin-bottom:8px}
+
+/* trust bar */
+.trust{display:flex;flex-wrap:wrap;gap:10px 28px;padding:18px 0;border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);font-size:14px;color:var(--ink-soft)}
+.trust b{color:var(--ink)}
+
+/* sections */
+section{padding:56px 0}
+.head{max-width:52ch;margin-bottom:32px}
+.head h2{font-size:clamp(25px,4.5vw,34px);font-weight:800;margin-bottom:10px}
+.head p{color:var(--ink-soft);margin:0}
+
+/* menu */
+.grid{display:grid;gap:16px;grid-template-columns:1fr}
+.item{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;
+  display:flex;gap:16px;align-items:flex-start;transition:.15s}
+.item:hover{border-color:var(--brand);transform:translateY(-2px);box-shadow:var(--shadow)}
+.thumb{width:56px;height:56px;border-radius:11px;flex:none;display:grid;place-items:center;font-size:26px;
+  background:#f3e7dd}
+.item h3{font-size:16.5px;font-weight:700;margin-bottom:3px}
+.item p{margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5}
+.price{margin-top:8px;font-weight:750;color:var(--brand);font-size:15px}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+  background:var(--accent);color:#3a2a10;padding:3px 8px;border-radius:5px;margin-left:7px;vertical-align:2px}
+
+/* about */
+.split{display:grid;gap:32px;align-items:center}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.stat b{display:block;font-size:26px;font-weight:800;letter-spacing:-.03em;color:var(--brand)}
+.stat span{font-size:13px;color:var(--ink-soft)}
+
+/* testimonials */
+.quotes{display:grid;gap:16px;grid-template-columns:1fr}
+.quote{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.stars{color:var(--accent);font-size:14px;letter-spacing:2px;margin-bottom:10px}
+.quote p{margin:0 0 14px;font-size:15px;line-height:1.65}
+.who{display:flex;align-items:center;gap:10px;font-size:13.5px}
+.av{width:34px;height:34px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;
+  font-weight:700;font-size:13px;flex:none}
+.who span{color:var(--ink-soft);font-size:12.5px;display:block}
+
+/* visit */
+.visit{background:var(--ink);color:#f6efe9;border-radius:20px;padding:38px 26px}
+.visit h2{color:#fff;font-size:clamp(24px,4vw,32px);font-weight:800;margin-bottom:12px}
+.visit p{color:#c9b8ab;margin:0 0 22px}
+.hours{display:grid;gap:9px;margin:0 0 26px;padding:0;list-style:none;font-size:14.5px}
+.hours li{display:flex;justify-content:space-between;padding-bottom:9px;border-bottom:1px solid #3a2c24}
+.hours b{color:#fff;font-weight:600}
+.map{border-radius:12px;aspect-ratio:16/10;background:
+  repeating-linear-gradient(45deg,#3a2c24,#3a2c24 12px,#33262010 12px,#33262010 24px),#2e2219;
+  display:grid;place-items:center;color:#a8968a;font-size:13px;text-align:center;padding:18px}
+
+/* floating WA */
+.fab{position:fixed;right:18px;bottom:18px;z-index:60;background:var(--wa);color:#fff;
+  width:56px;height:56px;border-radius:50%;display:grid;place-items:center;text-decoration:none;
+  box-shadow:0 6px 20px rgba(37,211,102,.4);font-size:26px;transition:.15s}
+.fab:hover{transform:scale(1.07)}
+
+footer{border-top:1px solid var(--line);padding:30px 0 90px;font-size:13.5px;color:var(--ink-soft)}
+.foot{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+
+@media(min-width:760px){
+  .links{display:flex}
+  .hero{grid-template-columns:1.05fr .95fr;align-items:center;padding:76px 0 60px}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .quotes{grid-template-columns:repeat(3,1fr)}
+  .split{grid-template-columns:1fr 1fr;gap:52px}
+  .visit{padding:52px 46px;display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center}
+  .visit .vhead{grid-column:1/-1}
+  .stat-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:520px){nav{height:58px;gap:10px}.logo{font-size:15.5px;white-space:nowrap;gap:7px}.logo span{width:26px;height:26px;font-size:13px}nav .btn{padding:9px 13px;font-size:13px;white-space:nowrap}}.demo{top:auto;bottom:0;border-bottom-right-radius:0;border-top-right-radius:8px}
+</style>
+</head>
+<body>
+<div class="demo">Demo portofolio — bisnis fiktif</div>
+
+<header>
+  <nav class="wrap">
+    <a class="logo" href="#"><span>☕</span> Kopi Ranting</a>
+    <div class="links">
+      <a href="#menu">Menu</a><a href="#cerita">Cerita</a><a href="#ulasan">Ulasan</a><a href="#kunjungi">Lokasi</a>
+    </div>
+    <a class="btn btn-wa" href="#kunjungi">Pesan via WA</a>
+  </nav>
+</header>
+
+<main>
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">● Buka sekarang — sampai 23.00</div>
+      <h1>Kopi yang bikin kerjaanmu selesai.</h1>
+      <p>Single origin dari petani Gayo &amp; Kintamani, di-roast tiap minggu. Wifi 200&nbsp;Mbps, colokan di tiap meja, dan tidak ada batas waktu duduk.</p>
+      <div class="cta-row">
+        <a class="btn btn-wa" href="#kunjungi">💬 Pesan lewat WhatsApp</a>
+        <a class="btn btn-ghost" href="#menu">Lihat menu</a>
+      </div>
+    </div>
+    <div class="hero-img"><div><b>☕</b>Foto interior kedai<br>(diganti foto asli klien)</div></div>
+  </div>
+
+  <div class="trust">
+    <div><b>4.8★</b> · 312 ulasan Google</div>
+    <div><b>Wifi 200 Mbps</b> · unlimited</div>
+    <div><b>Buka 07.00–23.00</b> tiap hari</div>
+    <div><b>Gratis</b> refill air putih</div>
+  </div>
+
+  <section id="menu">
+    <div class="head">
+      <h2>Menu andalan</h2>
+      <p>Harga sudah termasuk pajak. Menu lengkap ada 40+ item — tanya barista untuk rekomendasi hari ini.</p>
+    </div>
+    <div class="grid">
+      <div class="item"><div class="thumb">☕</div><div>
+        <h3>Es Kopi Ranting <span class="tag">Best seller</span></h3>
+        <p>Espresso double, susu segar, gula aren Jogja. Manisnya pas, tidak bikin eneg.</p>
+        <div class="price">Rp 22.000</div></div></div>
+      <div class="item"><div class="thumb">🫖</div><div>
+        <h3>V60 Single Origin</h3>
+        <p>Pilih Gayo (nutty, cokelat) atau Kintamani (citrus, floral). Diseduh manual di depanmu.</p>
+        <div class="price">Rp 28.000</div></div></div>
+      <div class="item"><div class="thumb">🥐</div><div>
+        <h3>Croissant Butter</h3>
+        <p>Dipanggang tiap pagi jam 6. Kalau kesiangan, biasanya sudah habis.</p>
+        <div class="price">Rp 18.000</div></div></div>
+      <div class="item"><div class="thumb">🍚</div><div>
+        <h3>Nasi Ayam Sambal Matah <span class="tag">Baru</span></h3>
+        <p>Porsi kenyang untuk yang nongkrong dari siang sampai malam.</p>
+        <div class="price">Rp 32.000</div></div></div>
+    </div>
+  </section>
+
+  <section id="cerita">
+    <div class="split">
+      <div>
+        <div class="head" style="margin-bottom:0">
+          <h2>Kami mulai dari satu mesin bekas.</h2>
+          <p>2019, dua orang, satu grinder pinjaman, dan keyakinan bahwa kopi enak tidak harus mahal. Sekarang kami beli langsung dari 6 petani mitra tanpa tengkulak — harga di cangkirmu tetap wajar, harga di petani jadi lebih adil.</p>
+        </div>
+        <div class="stat-grid">
+          <div class="stat"><b>6</b><span>Petani mitra</span></div>
+          <div class="stat"><b>7 hari</b><span>Maks. usia roast</span></div>
+          <div class="stat"><b>312</b><span>Ulasan Google</span></div>
+          <div class="stat"><b>2019</b><span>Sejak tahun</span></div>
+        </div>
+      </div>
+      <div class="hero-img" style="aspect-ratio:1/1"><div><b>📸</b>Foto barista / proses roasting<br>(diganti foto asli klien)</div></div>
+    </div>
+  </section>
+
+  <section id="ulasan">
+    <div class="head"><h2>Kata mereka yang sudah ke sini</h2></div>
+    <div class="quotes">
+      <div class="quote"><div class="stars">★★★★★</div>
+        <p>"Wifi-nya beneran kencang, saya video call 2 jam nggak putus sekalipun. Jadi kantor kedua."</p>
+        <div class="who"><div class="av">RA</div><div><b>Rani A.</b><span>Desainer freelance</span></div></div></div>
+      <div class="quote"><div class="stars">★★★★★</div>
+        <p>"Es kopi arennya juara dan nggak kemanisan. Baristanya juga sabar dijelasin bedanya Gayo sama Kintamani."</p>
+        <div class="who"><div class="av">BS</div><div><b>Bagus S.</b><span>Pelanggan sejak 2021</span></div></div></div>
+      <div class="quote"><div class="stars">★★★★☆</div>
+        <p>"Tempatnya nyaman buat ngerjain skripsi. Cuma kalau weekend agak penuh, datang pagi lebih aman."</p>
+        <div class="who"><div class="av">DP</div><div><b>Dewi P.</b><span>Mahasiswa</span></div></div></div>
+    </div>
+  </section>
+
+  <section id="kunjungi">
+    <div class="visit">
+      <div class="vhead">
+        <h2>Mampir, atau kami antar.</h2>
+        <p>Pesan lewat WhatsApp untuk takeaway, atau pesan antar via GoFood &amp; GrabFood.</p>
+      </div>
+      <div>
+        <ul class="hours">
+          <li><span>Senin – Jumat</span><b>07.00 – 23.00</b></li>
+          <li><span>Sabtu – Minggu</span><b>08.00 – 24.00</b></li>
+          <li><span>Libur nasional</span><b>Tetap buka</b></li>
+        </ul>
+        <div class="cta-row">
+          <a class="btn btn-wa" href="#">💬 Chat WhatsApp</a>
+          <a class="btn" style="background:#3a2c24" href="#">📍 Buka di Maps</a>
+        </div>
+      </div>
+      <div class="map">🗺️<br>Embed Google Maps<br><small>(dipasang saat live)</small></div>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer><div class="wrap foot">
+  <div>© 2026 Kopi Ranting · Jl. Kaliurang KM 5, Sleman, Yogyakarta</div>
+  <div>Instagram @kopiranting · 0812‑0000‑0000</div>
+</div></footer>
+
+<a class="fab" href="#kunjungi" aria-label="Chat WhatsApp">💬</a>
+</body>
+</html>
