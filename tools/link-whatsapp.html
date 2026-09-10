@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Generator Link WhatsApp Otomatis — Gratis, Tanpa Daftar</title>
+<meta name="description" content="Bikin link wa.me dengan pesan otomatis, QR code, dan tombol WhatsApp siap tempel. Gratis, tanpa daftar, tanpa aplikasi. Untuk toko online, katering, laundry, dan UMKM.">
+<link rel="canonical" href="https://alimmiftah32-glitch.github.io/landing-page-umkm/tools/link-whatsapp.html">
+<meta property="og:title" content="Generator Link WhatsApp Otomatis — Gratis">
+<meta property="og:description" content="Bikin link wa.me dengan pesan otomatis, QR code, dan tombol siap tempel. Gratis, tanpa daftar.">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --ink:#101a16; --soft:#5b6d64; --soft2:#84978c; --line:#e2e9e4; --bg:#f6f9f7; --card:#fff;
+  --wa:#25d366; --wa-dark:#1da851; --deep:#0b3d2c; --accent:#0f766e;
+  --r:12px; --sh:0 1px 2px rgba(16,26,22,.05),0 8px 26px rgba(16,26,22,.07);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 ui-sans-serif,system-ui,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+h1,h2,h3{margin:0;line-height:1.16;letter-spacing:-.022em;font-weight:800;text-wrap:balance}
+p{margin:0}
+a{color:var(--accent)}
+
+header{background:var(--deep);color:#e8f5ee;padding:38px 0 34px}
+header .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#6ee7a5}
+header h1{font-size:clamp(27px,5.2vw,40px);margin:12px 0 12px;color:#fff}
+header p{color:#a9c9ba;max-width:56ch;font-size:16.5px}
+.free{display:inline-flex;gap:8px;align-items:center;background:rgba(37,211,102,.16);
+  border:1.5px solid rgba(37,211,102,.4);color:#6ee7a5;font-size:13px;font-weight:650;
+  padding:6px 13px;border-radius:99px;margin-top:16px}
+
+main{padding:30px 0 54px}
+.grid{display:grid;gap:20px;grid-template-columns:1fr}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--sh)}
+.card h2{font-size:18px;margin-bottom:4px}
+.card>p.sub{color:var(--soft);font-size:14px;margin-bottom:18px}
+
+label{display:block;font-size:13.5px;font-weight:650;margin:0 0 6px}
+.hint{font-weight:400;color:var(--soft);font-size:12.5px}
+.fld{margin-bottom:16px}
+input,textarea{width:100%;padding:12px 13px;border:1.5px solid var(--line);border-radius:10px;
+  font:15px/1.5 inherit;color:var(--ink);background:#fff;font-family:inherit;resize:vertical}
+input:focus,textarea:focus{outline:0;border-color:var(--wa);box-shadow:0 0 0 3px rgba(37,211,102,.15)}
+.err{color:#b3261e;font-size:12.5px;margin-top:5px;display:none}
+.err.on{display:block}
+
+.out{background:#0f1a15;border-radius:12px;padding:14px 15px;margin-bottom:12px;
+  font-family:ui-monospace,Consolas,monospace;font-size:13px;color:#7ff0ac;
+  word-break:break-all;line-height:1.55;min-height:52px}
+.row{display:flex;gap:9px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--wa);
+  color:#04301b;text-decoration:none;font-weight:700;font-size:14.5px;padding:11px 18px;
+  border-radius:9px;border:0;cursor:pointer;font-family:inherit;transition:.15s}
+.btn:hover{background:var(--wa-dark);color:#fff}
+.btn.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line);font-weight:600}
+.btn.ghost:hover{border-color:var(--wa);background:#fff;color:var(--ink)}
+.btn.wide{width:100%}
+
+/* preview telepon */
+.phone{background:#0b1410;border-radius:20px;padding:14px;border:1px solid #1d2d25}
+.pbar{display:flex;align-items:center;gap:9px;padding:0 4px 12px;border-bottom:1px solid #1d2d25;margin-bottom:12px}
+.pav{width:32px;height:32px;border-radius:50%;background:#25d366;display:grid;place-items:center;
+  font-size:15px;flex:none}
+.pbar b{color:#e8f5ee;font-size:14px;font-weight:650;display:block;line-height:1.3}
+.pbar small{color:#7b9488;font-size:11.5px}
+.bubble{background:#075e54;color:#eafff3;border-radius:10px 10px 2px 10px;padding:10px 12px;
+  font-size:13.5px;line-height:1.55;white-space:pre-wrap;word-break:break-word;margin-left:auto;
+  max-width:88%;position:relative}
+.bubble:empty::before{content:"(pesan kosong — chat akan terbuka tanpa teks)";color:#8fb3a3;font-style:italic}
+.tick{text-align:right;color:#8fd7ad;font-size:10.5px;margin-top:4px}
+
+#qr{display:grid;place-items:center;padding:16px;background:#fff;border-radius:12px;
+  border:1px solid var(--line);margin-bottom:12px;min-height:180px}
+#qr img,#qr canvas{display:block}
+
+pre.code{background:#0f1a15;color:#cfe9db;border-radius:12px;padding:14px;overflow-x:auto;
+  font:12.5px/1.6 ui-monospace,Consolas,monospace;margin:0 0 12px}
+
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:var(--ink);
+  color:#fff;padding:11px 20px;border-radius:99px;font-size:14px;font-weight:600;opacity:0;
+  pointer-events:none;transition:.2s;z-index:99}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* artikel SEO */
+.artikel{margin-top:44px}
+.artikel h2{font-size:clamp(22px,4vw,28px);margin:34px 0 12px}
+.artikel h3{font-size:17.5px;margin:22px 0 8px}
+.artikel p{color:var(--soft);margin-bottom:12px;max-width:68ch}
+.artikel ol,.artikel ul{color:var(--soft);max-width:68ch;padding-left:20px}
+.artikel li{margin-bottom:7px}
+.artikel b{color:var(--ink)}
+details{background:var(--card);border:1px solid var(--line);border-radius:11px;
+  padding:15px 18px;margin-bottom:10px}
+summary{font-weight:650;cursor:pointer;font-size:15.5px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--wa-dark);font-weight:800}
+details[open] summary::after{content:"–"}
+details p{margin:10px 0 0;font-size:14.5px}
+
+.promo{background:linear-gradient(140deg,#0f3d2e,#0a2a20);border-radius:18px;padding:30px 24px;
+  color:#e8f5ee;margin-top:44px}
+.promo h2{color:#fff;font-size:clamp(21px,3.8vw,27px);margin-bottom:12px;max-width:24ch}
+.promo p{color:#a9c9ba;margin-bottom:10px;max-width:58ch;font-size:15.5px}
+.promo b{color:#fff}
+.promo .row{margin-top:20px}
+
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--soft);font-size:13.5px}
+
+@media(min-width:860px){
+  .grid{grid-template-columns:1.08fr .92fr;align-items:start}
+  .card.full{grid-column:1/-1}
+  .promo{padding:40px 36px}
+}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <div class="eyebrow">Alat gratis untuk UMKM</div>
+  <h1>Generator Link WhatsApp dengan Pesan Otomatis</h1>
+  <p>Bikin link <b>wa.me</b> yang langsung membuka chat dengan pesan sudah terisi, plus QR code dan tombol siap tempel. Cocok untuk bio Instagram, katalog, kartu nama, atau spanduk.</p>
+  <div class="free">✓ Gratis · tanpa daftar · tanpa aplikasi</div>
+</div></header>
+
+<main><div class="wrap">
+  <div class="grid">
+
+    <div class="card">
+      <h2>Isi datanya</h2>
+      <p class="sub">Semua diproses di HP/komputermu sendiri. Nomor kamu tidak dikirim ke mana pun.</p>
+
+      <div class="fld">
+        <label for="nomor">Nomor WhatsApp <span class="hint">— boleh tulis 08… atau +62…</span></label>
+        <input id="nomor" inputmode="tel" placeholder="0812 3456 7890" autocomplete="off">
+        <div class="err" id="errNomor">Nomor belum benar. Contoh: 081234567890</div>
+      </div>
+
+      <div class="fld">
+        <label for="pesan">Pesan otomatis <span class="hint">— muncul otomatis di kolom chat pembeli</span></label>
+        <textarea id="pesan" rows="5" placeholder="Halo, saya mau tanya produk yang di katalog."></textarea>
+      </div>
+
+      <div class="row">
+        <button class="btn ghost" data-tpl="toko">Contoh: toko online</button>
+        <button class="btn ghost" data-tpl="kuliner">Katering</button>
+        <button class="btn ghost" data-tpl="jasa">Jasa</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Beginilah tampilannya</h2>
+      <p class="sub">Yang pembeli lihat begitu menekan linkmu.</p>
+      <div class="phone">
+        <div class="pbar">
+          <div class="pav">🏪</div>
+          <div><b id="pvNama">Nomor kamu</b><small>online</small></div>
+        </div>
+        <div class="bubble" id="pvPesan"></div>
+        <div class="tick" id="pvJam">—</div>
+      </div>
+    </div>
+
+    <div class="card full">
+      <h2>Link kamu</h2>
+      <p class="sub">Tempel di bio Instagram, TikTok, katalog, atau tombol website.</p>
+      <div class="out" id="outLink">Isi nomornya dulu di atas.</div>
+      <div class="row">
+        <button class="btn" id="salinLink">📋 Salin link</button>
+        <a class="btn ghost" id="cobaLink" target="_blank" rel="noopener">Coba buka</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>QR Code</h2>
+      <p class="sub">Untuk spanduk, kartu nama, stiker meja, atau kemasan produk.</p>
+      <div id="qr"><span style="color:#84978c;font-size:14px">Isi nomornya dulu.</span></div>
+      <button class="btn wide" id="unduhQR">⬇️ Unduh QR (PNG)</button>
+    </div>
+
+    <div class="card">
+      <h2>Kode tombol</h2>
+      <p class="sub">Kalau kamu sudah punya website, tempel kode ini untuk tombol WhatsApp melayang.</p>
+      <pre class="code" id="outKode">Isi nomornya dulu.</pre>
+      <button class="btn wide ghost" id="salinKode">📋 Salin kode HTML</button>
+    </div>
+
+  </div>
+
+  <div class="promo">
+    <h2>Link saja sering belum cukup.</h2>
+    <p>Alat di atas bikin satu pesan otomatis. Tapi kalau kamu jualan <b>banyak produk dengan harga berbeda</b>, pembeli tetap harus mengetik sendiri apa yang mau dia beli — dan di situ banyak yang batal.</p>
+    <p>Saya bikin halaman katalog yang pembelinya tinggal <b>pilih produk, atur jumlah, tekan pesan</b> — lalu chat WhatsApp-nya tersusun sendiri lengkap dengan rincian dan total harga. Kamu tinggal balas "siap, diproses".</p>
+    <p><b>Rp 800.000</b>, selesai 3–5 hari kerja.</p>
+    <div class="row">
+      <a class="btn" href="../index.html">Lihat contohnya (bisa dicoba)</a>
+      <a class="btn ghost" href="https://wa.me/6281246809539?text=Halo%20Alim%2C%20saya%20habis%20pakai%20generator%20link%20WhatsApp-nya.%20Saya%20mau%20tanya%20soal%20halaman%20katalog." target="_blank" rel="noopener">💬 Tanya dulu</a>
+    </div>
+  </div>
+
+  <div class="artikel">
+    <h2>Cara bikin link WhatsApp otomatis</h2>
+    <p>Link WhatsApp (sering disebut <b>link wa.me</b>) adalah tautan yang langsung membuka jendela chat ke nomormu, tanpa pembeli harus menyimpan nomor dulu. Ini penting: banyak calon pembeli batal menghubungi hanya karena malas menyimpan kontak.</p>
+
+    <h3>Langkahnya</h3>
+    <ol>
+      <li>Tulis nomor WhatsApp-mu di kolom di atas. Boleh format <b>08…</b>, nanti otomatis diubah ke format internasional <b>62…</b>.</li>
+      <li>Tulis pesan pembuka yang kamu mau muncul otomatis. Ini opsional, tapi sangat membantu.</li>
+      <li>Salin linknya, lalu tempel di bio Instagram, TikTok, Facebook, atau tombol website.</li>
+    </ol>
+
+    <h3>Kenapa nomor harus diubah jadi 62?</h3>
+    <p>WhatsApp memakai format internasional tanpa tanda plus dan tanpa angka nol di depan. Jadi <b>0812 3456 7890</b> menjadi <b>62812 3456 7890</b>. Alat di atas melakukannya otomatis, termasuk membuang spasi, tanda hubung, dan tanda kurung.</p>
+
+    <h3>Pesan otomatis yang bagus itu seperti apa?</h3>
+    <p>Buat pendek dan spesifik, dan tulis dari sudut pandang pembeli — bukan penjual. Bandingkan:</p>
+    <ul>
+      <li>❌ "Terima kasih telah menghubungi kami" — tidak memberi informasi apa pun ke kamu.</li>
+      <li>✅ "Halo, saya mau pesan nasi box. Untuk tanggal: ___ , jumlah porsi: ___" — pembeli tinggal isi titik-titik, dan kamu langsung tahu maksudnya.</li>
+    </ul>
+    <p>Trik titik-titik ini menaikkan kualitas chat masuk secara nyata, karena pembeli terpandu memberi detail yang kamu butuhkan sejak pesan pertama.</p>
+
+    <h2>Pertanyaan umum</h2>
+    <details open><summary>Apakah nomor saya disimpan di sini?</summary>
+      <p>Tidak. Halaman ini bekerja sepenuhnya di perangkatmu. Tidak ada data yang dikirim ke server mana pun, dan tidak ada yang disimpan. Kamu bisa memutus internet setelah halaman terbuka dan alat ini tetap jalan.</p></details>
+    <details><summary>Bisa dipakai untuk WhatsApp Business?</summary>
+      <p>Bisa. Link wa.me bekerja sama untuk WhatsApp biasa maupun WhatsApp Business, selama nomornya aktif dan terdaftar.</p></details>
+    <details><summary>Kenapa linknya tidak jalan?</summary>
+      <p>Biasanya karena nomornya belum terdaftar di WhatsApp, atau masih ada angka nol di depan. Pastikan nomornya benar-benar dipakai untuk WhatsApp, lalu coba tombol "Coba buka" di atas.</p></details>
+    <details><summary>Apakah ada batas jumlah pesan?</summary>
+      <p>Link ini hanya membuka jendela chat — tidak mengirim pesan otomatis dan tidak melakukan blast. Jadi tidak ada batas, dan tidak melanggar aturan WhatsApp.</p></details>
+    <details><summary>Boleh saya pakai untuk usaha saya?</summary>
+      <p>Silakan, gratis dan tanpa syarat. Kalau alat ini membantu, cerita ke sesama pemilik usaha lain sudah lebih dari cukup.</p></details>
+  </div>
+</div></main>
+
+<footer><div class="wrap">
+  Alat gratis dari <a href="../index.html">jasa landing page UMKM</a> · dibuat oleh Alim · tidak berafiliasi dengan WhatsApp/Meta
+</div></footer>
+
+<div class="toast" id="toast">Tersalin</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha384-3zSEDfvllQohrq0PHL1fOXJuC/jSOO34H46t6UQfobFOmxE5BpjjaIJY5F2/bMnU" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var nomor = $('nomor'), pesan = $('pesan');
+  var qrObj = null;
+
+  var TPL = {
+    toko:    "Halo, saya mau pesan produk ini:\n\nNama produk: \nJumlah: \n\nAlamat kirim: ",
+    kuliner: "Halo, saya mau pesan katering.\n\nPaket: \nJumlah porsi: \nTanggal acara: \nAlamat antar: ",
+    jasa:    "Halo, saya mau tanya layanannya.\n\nKebutuhan saya: \nLokasi: \nKapan dibutuhkan: "
+  };
+
+  function normalisasi(raw){
+    var d = (raw || "").replace(/[^0-9+]/g, "");
+    d = d.replace(/\+/g, "");
+    if(d.indexOf("0") === 0) d = "62" + d.slice(1);
+    else if(d.indexOf("62") !== 0 && d.length > 0) d = "62" + d;
+    return d;
+  }
+  function valid(d){ return d.length >= 10 && d.length <= 15 && d.indexOf("62") === 0; }
+  function cantik(d){
+    if(!d) return "Nomor kamu";
+    return "+" + d.slice(0,2) + " " + d.slice(2,5) + "-" + d.slice(5,9) + "-" + d.slice(9);
+  }
+  function jamSekarang(){
+    var t = new Date();
+    return String(t.getHours()).padStart(2,"0") + "." + String(t.getMinutes()).padStart(2,"0");
+  }
+
+  function render(){
+    var d = normalisasi(nomor.value), teks = pesan.value;
+    var ok = valid(d);
+    $('errNomor').classList.toggle('on', nomor.value.trim().length > 0 && !ok);
+
+    $('pvNama').textContent = cantik(ok ? d : "");
+    $('pvPesan').textContent = teks;
+    $('pvJam').textContent = teks || ok ? jamSekarang() + " ✓✓" : "—";
+
+    if(!ok){
+      $('outLink').textContent = "Isi nomornya dulu di atas.";
+      $('outKode').textContent = "Isi nomornya dulu.";
+      $('cobaLink').removeAttribute('href');
+      $('qr').innerHTML = '<span style="color:#8f9f96;font-size:14px">Isi nomornya dulu.</span>';
+      qrObj = null;
+      return;
+    }
+
+    var link = "https://wa.me/" + d + (teks ? "?text=" + encodeURIComponent(teks) : "");
+    $('outLink').textContent = link;
+    $('cobaLink').href = link;
+
+    $('outKode').textContent =
+      '<a href="' + link.replace(/&/g,'&amp;').replace(/</g,'&lt;') + '"\n' +
+      '   target="_blank" rel="noopener"\n' +
+      '   style="position:fixed;right:18px;bottom:18px;z-index:999;width:56px;height:56px;\n' +
+      '          border-radius:50%;background:#25d366;display:grid;place-items:center;\n' +
+      '          font-size:26px;text-decoration:none;box-shadow:0 6px 20px rgba(37,211,102,.4)"\n' +
+      '   aria-label="Chat WhatsApp">💬</a>';
+
+    $('qr').innerHTML = "";
+    try{
+      qrObj = new QRCode($('qr'), { text: link, width: 190, height: 190,
+        colorDark: "#0b3d2c", colorLight: "#ffffff", correctLevel: QRCode.CorrectLevel.M });
+    }catch(e){
+      $('qr').innerHTML = '<span style="color:#8f9f96;font-size:14px">QR gagal dimuat. Linknya tetap bisa dipakai.</span>';
+    }
+  }
+
+  function toast(msg){
+    var t = $('toast'); t.textContent = msg || "Tersalin";
+    t.classList.add('on'); setTimeout(function(){ t.classList.remove('on'); }, 1600);
+  }
+  function salin(teks, pesanSukses){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(teks).then(function(){ toast(pesanSukses); },
+        function(){ salinCadangan(teks, pesanSukses); });
+    } else { salinCadangan(teks, pesanSukses); }
+  }
+  function salinCadangan(teks, pesanSukses){
+    var ta = document.createElement('textarea');
+    ta.value = teks; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); toast(pesanSukses); }
+    catch(e){ toast("Gagal menyalin — salin manual ya"); }
+    document.body.removeChild(ta);
+  }
+
+  nomor.addEventListener('input', render);
+  pesan.addEventListener('input', render);
+
+  document.querySelectorAll('[data-tpl]').forEach(function(b){
+    b.addEventListener('click', function(){ pesan.value = TPL[b.dataset.tpl]; render(); pesan.focus(); });
+  });
+
+  $('salinLink').addEventListener('click', function(){
+    var d = normalisasi(nomor.value);
+    if(!valid(d)){ toast("Isi nomornya dulu"); return; }
+    salin($('outLink').textContent, "Link tersalin");
+  });
+  $('salinKode').addEventListener('click', function(){
+    var d = normalisasi(nomor.value);
+    if(!valid(d)){ toast("Isi nomornya dulu"); return; }
+    salin($('outKode').textContent, "Kode tersalin");
+  });
+  $('unduhQR').addEventListener('click', function(){
+    var cv = $('qr').querySelector('canvas'), im = $('qr').querySelector('img');
+    var data = cv ? cv.toDataURL("image/png") : (im ? im.src : null);
+    if(!data){ toast("Isi nomornya dulu"); return; }
+    var a = document.createElement('a');
+    a.href = data; a.download = "qr-whatsapp.png";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    toast("QR diunduh");
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

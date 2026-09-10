@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alimmiftah32-glitch.github.io/landing-page-umkm/sitemap.xml
