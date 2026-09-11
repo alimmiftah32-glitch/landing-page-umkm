@@ -3,239 +3,500 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Landing Page UMKM — Portofolio</title>
-<meta name="description" content="Jasa landing page untuk UMKM Indonesia. Mobile-first, dengan form dan katalog yang menyusun pesan WhatsApp otomatis.">
+<title>Website Pesanan WhatsApp untuk UMKM — Rp 800.000</title>
+<meta name="description" content="Halaman web untuk laundry, katering, servis, dan toko. Daftar harga dan form pesanan yang langsung jadi chat WhatsApp terisi lengkap. Rp 800.000, selesai 3-5 hari. Mockup dulu, gratis.">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:title" content="Website Pesanan WhatsApp untuk UMKM — Rp 800.000">
+<meta property="og:description" content="Pelanggan tidak perlu tanya harga satu-satu lagi. Mockup pakai nama bisnismu, gratis dulu.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
 <style>
 :root{
-  --bg:#fbfaf8; --card:#fff; --ink:#1a211f; --ink-2:#5c6b66; --ink-3:#8b9993;
-  --line:#e6e4de; --accent:#0f766e; --accent-2:#0b5c56; --accent-soft:#e2f0ee;
-  --warm:#b4692f; --wa:#25d366;
-  --font:"Plus Jakarta Sans","Segoe UI",system-ui,sans-serif;
+  --bg:#fbfaf8; --card:#fff; --ink:#1a211f; --ink-2:#55645f; --ink-3:#8b9993;
+  --line:#e6e4de; --line-2:#d6d3ca;
+  --accent:#0f766e; --accent-2:#0b5c56; --accent-soft:#e2f0ee; --accent-ink:#0b3d39;
+  --warm:#b4692f; --warm-soft:#fdf3e7;
+  --wa:#25d366; --wa-dark:#1da851;
+  --font:"Plus Jakarta Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  --shadow:0 14px 38px rgba(26,33,31,.09);
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
-  font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+  font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  padding-bottom:72px}
 h1,h2,h3{margin:0;line-height:1.15;letter-spacing:-.025em;font-weight:800;text-wrap:balance}
 p{margin:0}
 a{color:inherit}
+img{max-width:100%}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 
-.eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
-
-.hero{padding:64px 0 52px;border-bottom:1px solid var(--line)}
-.hero h1{font-size:clamp(32px,6.4vw,50px);margin:14px 0 18px;max-width:17ch}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.hero p{color:var(--ink-2);font-size:17.5px;max-width:56ch}
-.cta{display:flex;flex-wrap:wrap;gap:11px;margin-top:28px}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;
-  text-decoration:none;font-weight:600;font-size:15px;padding:12px 22px;border-radius:9px;
-  transition:.15s;font-family:inherit;border:0;cursor:pointer}
+/* ---------- tombol ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:15px;
+  padding:13px 22px;border-radius:10px;transition:.15s;font-family:inherit;border:0;cursor:pointer;
+  text-align:center}
 .btn:hover{background:var(--accent-2)}
-.btn.wa{background:var(--wa)}.btn.wa:hover{background:#1da851}
-.btn.alt{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+.btn.wa{background:var(--wa);color:#04301b}
+.btn.wa:hover{background:var(--wa-dark);color:#fff}
+.btn.alt{background:#fff;color:var(--ink);border:1.5px solid var(--line-2)}
 .btn.alt:hover{border-color:var(--accent);color:var(--accent)}
+.btn.sm{padding:9px 16px;font-size:13.5px}
+.cta{display:flex;flex-wrap:wrap;gap:11px;margin-top:26px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}
 
-section{padding:56px 0}
-.shead{margin-bottom:30px}
-.shead h2{font-size:clamp(24px,4.4vw,32px);margin:9px 0 10px}
+/* ---------- header lengket ---------- */
+.bar{position:sticky;top:0;z-index:50;background:rgba(251,250,248,.93);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  min-height:58px;padding-top:8px;padding-bottom:8px}
+.merek{font-weight:800;letter-spacing:-.03em;font-size:16.5px;text-decoration:none;flex:none;
+  white-space:nowrap}
+.merek .dot{color:var(--accent)}
+.barnav{display:none;gap:22px;font-size:14.5px;font-weight:600;color:var(--ink-2)}
+.barnav a{text-decoration:none}
+.barnav a:hover{color:var(--accent)}
+
+/* ---------- hero ---------- */
+.hero{padding:44px 0 46px}
+.hero h1{font-size:clamp(29px,6.6vw,47px);margin:14px 0 18px;max-width:19ch}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{color:var(--ink-2);font-size:17.5px;max-width:54ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{background:var(--card);border:1.5px solid var(--line-2);border-radius:99px;
+  padding:6px 14px;font-size:13.5px;font-weight:600;color:var(--ink-2)}
+.chip b{color:var(--ink);font-weight:800}
+.chip.hi{background:var(--accent-soft);border-color:#b9dcd7;color:var(--accent-ink)}
+
+/* ---------- strip kepercayaan ---------- */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:var(--card);padding:18px 0}
+.strip ul{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:1fr 1fr}
+.strip li{display:flex;gap:10px;font-size:13.5px;line-height:1.45;color:var(--ink-2)}
+.strip b{color:var(--ink);display:block;font-size:14px}
+
+/* Centang digambar dengan CSS - bukan emoji, jadi bentuknya sama di semua HP */
+.cek{width:15px;height:15px;flex:none;position:relative;margin-top:3px;display:block}
+.cek::before{content:"";position:absolute;left:4px;top:0;width:6px;height:11px;
+  border:solid var(--accent);border-width:0 2.4px 2.4px 0;transform:rotate(42deg)}
+
+section{padding:52px 0}
+.shead{margin-bottom:28px}
+.shead h2{font-size:clamp(23px,4.6vw,33px);margin:9px 0 11px}
 .shead p{color:var(--ink-2);max-width:58ch}
 
-.demos{display:grid;gap:20px;grid-template-columns:1fr}
-.demo{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;
-  display:flex;flex-direction:column;transition:.18s}
-.demo:hover{border-color:var(--accent);transform:translateY(-3px);
-  box-shadow:0 12px 32px rgba(26,33,31,.08)}
-.cap{height:132px;display:grid;place-items:center;font-size:44px}
-.c1{background:linear-gradient(145deg,#e9d5c0,#c99a6e)}
-.c2{background:linear-gradient(145deg,#cfe0f2,#7fa9d6)}
-.c3{background:linear-gradient(145deg,#d5e6cf,#84b378)}
-.dbody{padding:20px;display:flex;flex-direction:column;flex:1}
-.demo h3{font-size:17.5px;margin-bottom:6px}
-.demo>.dbody>p{color:var(--ink-2);font-size:14.5px;flex:1}
-.fitur{list-style:none;padding:0;margin:14px 0 18px;display:grid;gap:6px;font-size:13.5px;color:var(--ink-2)}
-.fitur li{display:flex;gap:8px}
-.fitur i{color:var(--accent);font-style:normal;font-weight:700;flex:none}
-.demo .btn{width:100%;justify-content:center;font-size:14.5px;padding:11px}
+/* ---------- kartu bukti ---------- */
+.bukti{display:grid;gap:18px;grid-template-columns:1fr}
+.kerja{background:var(--card);border:1px solid var(--line);border-radius:15px;
+  overflow:hidden;display:flex;flex-direction:column;transition:.18s}
+.kerja:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--shadow)}
+.gbr{position:relative;background:#f1efe9;border-bottom:1px solid var(--line);flex:none}
+.shot{display:block;width:100%;height:224px;object-fit:cover;object-position:top center}
+/* Label di luar gambar, bukan menumpang di atasnya - di dalam tangkapan layar
+   sudah ada tombol dan logo, label apa pun di sana pasti menabrak sesuatu. */
+.baris{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.tag{background:var(--warm-soft);color:var(--warm);border:1px solid #f0dcc2;font-size:10.5px;
+  font-weight:800;letter-spacing:.07em;text-transform:uppercase;padding:4px 10px;
+  border-radius:5px;flex:none}
+.kbody{padding:17px 20px 20px;display:flex;flex-direction:column;flex:1}
+.kerja h3{font-size:18px;margin:9px 0 5px}
+.bintang{display:flex;align-items:center;gap:6px;font-size:13.5px;color:var(--ink-3);
+  margin-bottom:11px;font-weight:600}
+.bintang svg{width:15px;height:15px;fill:var(--warm);flex:none}
+.bintang b{color:var(--warm)}
+.kerja p{color:var(--ink-2);font-size:14.5px;flex:1;margin-bottom:16px}
 
-.harga{display:grid;gap:16px;grid-template-columns:1fr}
-.paket{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:24px;
-  display:flex;flex-direction:column}
-.paket.unggul{border-color:var(--accent);position:relative;
-  box-shadow:0 12px 32px rgba(15,118,110,.1)}
-.tandanya{position:absolute;top:-11px;left:24px;background:var(--accent);color:#fff;font-size:11px;
-  font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 11px;border-radius:6px}
-.paket h3{font-size:16.5px;font-weight:600;color:var(--ink-2)}
-.paket .rp{font-size:30px;font-weight:800;letter-spacing:-.03em;margin:8px 0 3px}
-.paket .lama{font-size:13.5px;color:var(--ink-3)}
-.paket ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:8px;font-size:14.5px;flex:1}
-.paket li{display:flex;gap:9px}
-.paket li i{color:var(--accent);font-style:normal;font-weight:700;flex:none}
+/* ---------- catatan jujur ---------- */
+.jujur{background:var(--card);border:1.5px dashed var(--line-2);border-radius:14px;
+  padding:22px;margin-top:20px}
+.jujur h3{font-size:17px;margin-bottom:9px}
+.jujur p{color:var(--ink-2);font-size:14.8px;max-width:66ch}
+.jujur p+p{margin-top:9px}
 
-.beda{background:var(--accent-soft);border-radius:16px;padding:32px 26px;margin-top:8px}
-.beda h2{font-size:clamp(22px,4vw,29px);margin-bottom:14px;max-width:20ch}
-.beda p{color:#255d58;font-size:15.5px;max-width:60ch;margin-bottom:12px}
-.beda p:last-child{margin-bottom:0}
-.beda b{color:#0b3d39}
+/* ---------- demo ---------- */
+.demos{display:grid;gap:16px;grid-template-columns:1fr}
+.demo{background:var(--card);border:1px solid var(--line);border-radius:14px;
+  overflow:hidden;display:flex;flex-direction:column;transition:.18s}
+.demo:hover{border-color:var(--accent);box-shadow:var(--shadow)}
+.demo .shot{height:176px}
+.dbody{padding:17px 18px 18px;display:flex;flex-direction:column;flex:1}
+.demo h3{font-size:16.5px;margin-bottom:6px}
+.dbody>p{color:var(--ink-2);font-size:14px;flex:1;margin-bottom:14px}
 
-.kontak{border-top:1px solid var(--line);margin-top:20px;padding:52px 0 0;text-align:center}
-.kontak h2{font-size:clamp(23px,4.2vw,31px);margin-bottom:12px}
-.kontak p{color:var(--ink-2);max-width:48ch;margin:0 auto 24px}
-footer{padding:44px 0 40px;color:var(--ink-3);font-size:13.5px;text-align:center}
+/* ---------- langkah ---------- */
+.langkah{display:grid;gap:14px;grid-template-columns:1fr;counter-reset:n}
+.step{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:20px;
+  position:relative;counter-increment:n}
+.step::before{content:counter(n);position:absolute;top:18px;right:18px;
+  font-size:30px;font-weight:800;color:var(--line-2);line-height:1}
+.step h3{font-size:16px;margin-bottom:6px;padding-right:34px}
+.step p{color:var(--ink-2);font-size:14.2px}
 
-@media(min-width:780px){
+/* ---------- blok warna ---------- */
+.blok{background:var(--accent-soft);border-radius:17px;padding:30px 24px}
+.blok h2{font-size:clamp(21px,4.2vw,29px);margin-bottom:14px;max-width:21ch}
+.blok p{color:#255d58;font-size:15.5px;max-width:62ch}
+.blok p+p{margin-top:11px}
+.blok b{color:var(--accent-ink)}
+
+/* ---------- harga ---------- */
+.kartuharga{background:var(--card);border:2px solid var(--accent);border-radius:17px;
+  padding:28px 24px;box-shadow:var(--shadow);position:relative}
+.pita{position:absolute;top:-12px;left:24px;background:var(--accent);color:#fff;font-size:11px;
+  font-weight:800;letter-spacing:.07em;text-transform:uppercase;padding:5px 12px;border-radius:6px}
+.rp{font-size:clamp(36px,8vw,46px);font-weight:800;letter-spacing:-.035em;margin:6px 0 2px;line-height:1}
+.rp small{font-size:15px;font-weight:600;color:var(--ink-3);letter-spacing:0}
+.banding{color:var(--ink-3);font-size:14px;margin-bottom:6px}
+.banding s{opacity:.75}
+.lama{font-size:14px;color:var(--ink-2);font-weight:600}
+.isi{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:9px;font-size:14.8px}
+.isi li{display:flex;gap:11px;align-items:flex-start}
+.tambahan{display:grid;gap:14px;grid-template-columns:1fr;margin-top:16px}
+.add{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:20px}
+.add h3{font-size:15.5px;font-weight:700;color:var(--ink-2);margin-bottom:4px}
+.add .n{font-size:23px;font-weight:800;letter-spacing:-.03em}
+.add .n small{font-size:13px;font-weight:600;color:var(--ink-3)}
+.add p{color:var(--ink-2);font-size:13.8px;margin-top:8px}
+
+/* ---------- faq ---------- */
+.faq{display:grid;gap:10px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+details[open]{border-color:var(--accent)}
+summary{cursor:pointer;padding:17px 46px 17px 19px;font-weight:700;font-size:15.5px;
+  position:relative;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:19px;top:15px;font-size:22px;
+  font-weight:700;color:var(--accent);line-height:1.1}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 19px 18px;color:var(--ink-2);font-size:14.8px;max-width:64ch}
+details p+p{padding-top:0;margin-top:-6px;padding-bottom:18px}
+
+/* ---------- penutup ---------- */
+.tutup{text-align:center;background:var(--card);border:1px solid var(--line);
+  border-radius:17px;padding:38px 24px}
+.tutup h2{font-size:clamp(23px,4.6vw,33px);margin-bottom:12px}
+.tutup p{color:var(--ink-2);max-width:50ch;margin:0 auto}
+.tutup .cta{justify-content:center}
+footer{padding:40px 0 34px;color:var(--ink-3);font-size:13.5px;text-align:center}
+footer a{color:var(--ink-2)}
+
+/* ---------- tombol melayang + bar bawah ---------- */
+.melayang{position:fixed;right:18px;bottom:86px;z-index:60;width:56px;height:56px;
+  border-radius:50%;background:var(--wa);display:grid;place-items:center;
+  box-shadow:0 8px 24px rgba(37,211,102,.42);text-decoration:none;transition:.18s}
+.melayang:hover{background:var(--wa-dark);transform:scale(1.06)}
+.melayang svg{width:30px;height:30px;fill:#fff}
+.barbawah{position:fixed;left:0;right:0;bottom:0;z-index:55;background:rgba(255,255,255,.97);
+  backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 16px;
+  display:flex;align-items:center;gap:12px}
+.barbawah .harga-kecil{font-size:13px;line-height:1.35;color:var(--ink-2);flex:1;min-width:0}
+.barbawah .harga-kecil b{display:block;font-size:15px;color:var(--ink);font-weight:800}
+.barbawah .btn{flex:none}
+
+/* Di HP, bar bawah sudah memegang ajakannya - tombol melayang cuma menabrak isi.
+   Di layar besar sebaliknya: tidak ada bar bawah, jadi tombol melayang yang bekerja. */
+@media(max-width:699px){
+  .melayang{display:none}
+  .bar .btn.sm{white-space:nowrap;padding:9px 13px;font-size:13px}
+  .merek{font-size:15.5px}
+  .merek .sub{display:none}
+  .hero .cta{flex-direction:column;align-items:stretch}
+  .hero .cta .btn{width:100%}
+  .tutup .cta{flex-direction:column;align-items:stretch}
+}
+@media(min-width:700px){
+  body{padding-bottom:0}
+  .barbawah{display:none}
+  .melayang{bottom:24px}
+  .strip ul{grid-template-columns:repeat(4,1fr)}
+  .bukti{grid-template-columns:1fr 1fr}
   .demos{grid-template-columns:repeat(3,1fr)}
-  .harga{grid-template-columns:repeat(3,1fr)}
-  .beda{padding:44px 40px}
+  .langkah{grid-template-columns:repeat(2,1fr)}
+  .tambahan{grid-template-columns:1fr 1fr}
+  .blok{padding:42px 38px}
+}
+@media(min-width:900px){
+  .barnav{display:flex}
+  .langkah{grid-template-columns:repeat(4,1fr)}
 }
 </style>
 </head>
 <body>
 
+<div class="bar"><div class="wrap">
+  <a class="merek" href="#">Alim<span class="dot">.</span><span class="sub"> Landing Page UMKM</span></a>
+  <nav class="barnav">
+    <a href="#bukti">Hasil kerja</a>
+    <a href="#cara">Caranya</a>
+    <a href="#harga">Harga</a>
+    <a href="#tanya">Tanya jawab</a>
+  </nav>
+  <a class="btn wa sm" href="https://wa.me/6285138231879?text=Halo%20Alim%2C%20saya%20mau%20tanya%20soal%20pembuatan%20halaman%20web%20untuk%20usaha%20saya.">Chat WhatsApp</a>
+</div></div>
+
 <header class="hero"><div class="wrap">
-  <div class="eyebrow">Landing page untuk UMKM</div>
-  <h1>Website yang bikin orang <em>menekan tombol WhatsApp</em>.</h1>
-  <p>Kebanyakan website UMKM gagal di satu hal yang sama: pengunjung datang, lihat-lihat, lalu pergi tanpa menghubungi. Saya bikin halaman yang tugasnya cuma satu — mengubah pengunjung jadi chat masuk.</p>
+  <div class="eyebrow">Untuk laundry, katering, servis &amp; toko</div>
+  <h1>Usahamu sudah ada di Google Maps. Tapi orang masih harus <em>tanya harga satu-satu</em>.</h1>
+  <p class="lead">Saya bikin satu halaman web yang menjawab semuanya lebih dulu &mdash; daftar harga, cara pesan, lokasi, jam buka. Dan waktu pelanggan menekan tombol pesan, chat WhatsApp-nya <b>sudah terisi lengkap</b>: mau apa, berapa, alamatnya di mana.</p>
+  <div class="chips">
+    <span class="chip hi"><b>Rp 800.000</b> &middot; harga tetap</span>
+    <span class="chip">Selesai <b>3&ndash;5 hari</b></span>
+    <span class="chip">Mockup dulu, <b>gratis</b></span>
+  </div>
   <div class="cta">
-    <a class="btn" href="#contoh">Lihat 3 contoh</a>
-    <a class="btn alt" href="#harga">Cek harga</a>
+    <a class="btn wa" href="https://wa.me/6285138231879?text=Halo%20Alim%2C%20saya%20mau%20minta%20mockup%20gratis.%0A%0ANama%20usaha%20saya%3A%20%0AJenis%20usaha%3A%20%0AKota%3A%20">Minta mockup gratis</a>
+    <a class="btn alt" href="#bukti">Lihat hasil kerjanya dulu</a>
   </div>
 </div></header>
 
+<div class="strip"><div class="wrap"><ul>
+  <li><i class="cek"></i><span><b>Harga tetap</b>Tidak ada biaya kejutan di tengah jalan</span></li>
+  <li><i class="cek"></i><span><b>Lihat dulu, baru putuskan</b>Mockup pakai nama usahamu, tanpa bayar</span></li>
+  <li><i class="cek"></i><span><b>Milik kamu</b>Domain dan file atas namamu sendiri</span></li>
+  <li><i class="cek"></i><span><b>Tanpa biaya bulanan</b>Hosting gratis, tidak ada langganan platform</span></li>
+</ul></div></div>
+
 <main>
-<section id="contoh"><div class="wrap">
+
+<section id="bukti"><div class="wrap">
   <div class="shead">
-    <div class="eyebrow">Contoh hasil kerja</div>
-    <h2>Bisa langsung dicoba</h2>
-    <p>Ketiganya bisnis fiktif yang saya buat sebagai contoh. Semuanya berfungsi penuh — klik tombolnya, isi formnya, lihat sendiri pesan WhatsApp-nya tersusun.</p>
+    <div class="eyebrow">Bukti, bukan janji</div>
+    <h2>Dua halaman untuk usaha yang benar-benar ada</h2>
+    <p>Saya ambil data publik mereka dari Google Maps &mdash; rating, alamat, jam buka, ulasan asli &mdash; lalu saya bangun halamannya. Buka dan coba sendiri: isi formnya, lihat pesan WhatsApp-nya tersusun.</p>
   </div>
 
+  <div class="bukti">
+    <article class="kerja">
+      <div class="gbr">
+        <img class="shot" src="img/anand-catering.jpg" width="840" height="1240" loading="lazy"
+             alt="Tampilan halaman Anand Catering Bogor di layar HP">
+      </div>
+      <div class="kbody">
+        <div class="baris"><span class="eyebrow">Katering</span><span class="tag">Mockup</span></div>
+        <h3>Anand Catering Bogor</h3>
+        <div class="bintang">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+          <span><b>5,0</b> &middot; 479 ulasan Google</span>
+        </div>
+        <p>Katalog paket nasi box dan prasmanan, keranjang pesanan, plus tanggal acara. Checkout-nya menyusun sendiri rincian pesanan ke WhatsApp.</p>
+        <a class="btn alt" href="mockup/anand-catering.html">Buka &amp; coba pesan &rarr;</a>
+      </div>
+    </article>
+
+    <article class="kerja">
+      <div class="gbr">
+        <img class="shot" src="img/laundry-150-bekasi.jpg" width="840" height="1240" loading="lazy"
+             alt="Tampilan halaman Laundry 150 Bekasi di layar HP">
+      </div>
+      <div class="kbody">
+        <div class="baris"><span class="eyebrow">Laundry</span><span class="tag">Mockup</span></div>
+        <h3>Laundry 150 Bekasi</h3>
+        <div class="bintang">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+          <span><b>4,7</b> &middot; 100 ulasan Google</span>
+        </div>
+        <p>Harga per kilo, per pasang, dan per buah &mdash; karena mereka juga cuci sepatu, helm, tas, dan stroller. Form jemput menghitung estimasi biayanya otomatis.</p>
+        <a class="btn alt" href="mockup/laundry-150-bekasi.html">Buka &amp; coba jemput &rarr;</a>
+      </div>
+    </article>
+  </div>
+
+  <div class="jujur">
+    <h3>Terus terang: saya belum punya deretan testimoni.</h3>
+    <p>Saya baru mulai. Jadi daripada memajang review yang tidak bisa kamu cek, saya pilih cara lain &mdash; saya kerjakan dulu, lalu tunjukkan hasilnya. Dua halaman di atas saya buat tanpa diminta, dan saya kirimkan ke pemiliknya.</p>
+    <p><b>Tawaran yang sama berlaku untukmu.</b> Sebut nama usahamu, saya buatkan mockup-nya dulu. Kalau kamu suka, baru kita bicara harga. Kalau tidak, ya sudah &mdash; tidak ada yang perlu dibayar.</p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="shead">
+    <div class="eyebrow">Jenis halaman</div>
+    <h2>Tiga bentuk, menyesuaikan cara usahamu jualan</h2>
+    <p>Contoh berikut memakai nama bisnis karangan, tapi semua fungsinya berjalan penuh. Silakan klik-klik sepuasnya.</p>
+  </div>
   <div class="demos">
     <article class="demo">
-      <div class="cap c1">☕</div>
+      <img class="shot" src="img/demo-kafe.jpg" width="840" height="1240" loading="lazy"
+           alt="Contoh halaman kedai kopi dengan menu dan harga">
       <div class="dbody">
-        <h3>Kedai kopi</h3>
-        <p>Untuk bisnis kuliner yang perlu menampilkan menu, jam buka, dan lokasi.</p>
-        <ul class="fitur">
-          <li><i>→</i> Menu dengan harga</li>
-          <li><i>→</i> Tombol WhatsApp melayang</li>
-          <li><i>→</i> Ulasan pelanggan &amp; jam operasional</li>
-        </ul>
-        <a class="btn" href="demo/01-kafe-kopi-ranting.html">Buka contoh</a>
+        <h3>Menu &amp; lokasi</h3>
+        <p>Untuk kuliner: daftar menu berikut harga, jam buka, peta, dan ulasan pelanggan.</p>
+        <a class="btn alt sm" href="demo/01-kafe-kopi-ranting.html">Buka contoh</a>
       </div>
     </article>
-
     <article class="demo">
-      <div class="cap c2">🧺</div>
+      <img class="shot" src="img/demo-laundry.jpg" width="840" height="1240" loading="lazy"
+           alt="Contoh halaman laundry dengan form penjemputan">
       <div class="dbody">
-        <h3>Jasa dengan booking</h3>
-        <p>Untuk laundry, servis, klinik — apa pun yang pelanggannya perlu memesan jadwal.</p>
-        <ul class="fitur">
-          <li><i>→</i> Form jadwal penjemputan</li>
-          <li><i>→</i> Estimasi biaya otomatis</li>
-          <li><i>→</i> Pesan WA terisi lengkap sendiri</li>
-        </ul>
-        <a class="btn" href="demo/02-jasa-laundry-kilat.html">Buka contoh</a>
+        <h3>Booking &amp; jemput</h3>
+        <p>Untuk laundry, servis, klinik. Form jadwal dengan estimasi biaya yang dihitung otomatis.</p>
+        <a class="btn alt sm" href="demo/02-jasa-laundry-kilat.html">Buka contoh</a>
       </div>
     </article>
-
     <article class="demo">
-      <div class="cap c3">🌿</div>
+      <img class="shot" src="img/demo-katalog.jpg" width="840" height="1240" loading="lazy"
+           alt="Contoh halaman katalog produk dengan keranjang belanja">
       <div class="dbody">
-        <h3>Katalog produk</h3>
-        <p>Untuk yang jualan banyak item — skincare, herbal, fashion, makanan kemasan.</p>
-        <ul class="fitur">
-          <li><i>→</i> Katalog dengan filter kategori</li>
-          <li><i>→</i> Keranjang belanja</li>
-          <li><i>→</i> Checkout jadi pesan WA rapi</li>
-        </ul>
-        <a class="btn" href="demo/03-katalog-produk-sari-bumi.html">Buka contoh</a>
+        <h3>Katalog &amp; keranjang</h3>
+        <p>Untuk yang jualan banyak item: filter kategori, keranjang, checkout jadi chat rapi.</p>
+        <a class="btn alt sm" href="demo/03-katalog-produk-sari-bumi.html">Buka contoh</a>
       </div>
     </article>
   </div>
 </div></section>
 
+<section id="cara"><div class="wrap">
+  <div class="shead">
+    <div class="eyebrow">Caranya</div>
+    <h2>Empat langkah, dan kamu tidak perlu mengerti teknis sama sekali</h2>
+  </div>
+  <div class="langkah">
+    <div class="step">
+      <h3>Chat dan sebut usahamu</h3>
+      <p>Cukup nama usaha, jenisnya apa, dan kotanya di mana. Tidak perlu menyiapkan apa pun dulu.</p>
+    </div>
+    <div class="step">
+      <h3>Saya kirim mockup</h3>
+      <p>Dalam 1&ndash;2 hari kamu terima link berisi halaman dengan nama usahamu sendiri. Gratis, belum ada ikatan apa pun.</p>
+    </div>
+    <div class="step">
+      <h3>Kalau cocok, kita lanjut</h3>
+      <p>Kamu kirim daftar harga asli, foto, dan alamat. DP 50% untuk mulai, pelunasan setelah kamu setuju hasilnya.</p>
+    </div>
+    <div class="step">
+      <h3>Tayang 3&ndash;5 hari</h3>
+      <p>Link siap pakai, bisa langsung ditempel di bio Instagram, Google Maps, atau status WhatsApp.</p>
+    </div>
+  </div>
+</div></section>
+
 <section><div class="wrap">
-  <div class="beda">
-    <h2>Bedanya di mana dengan website biasa?</h2>
-    <p>Website biasa kasih kamu formulir kontak, lalu email masuk yang sering tidak dibaca. Di Indonesia, transaksi terjadi di WhatsApp — jadi itu yang saya jadikan tujuan akhirnya.</p>
-    <p>Saat pelanggan menekan tombol pesan, <b>chat WhatsApp-nya sudah terisi lengkap</b>: produk apa, berapa banyak, total harga, alamat. Kamu tinggal balas "siap, diproses" — tidak perlu tanya ulang satu per satu.</p>
-    <p>Halamannya juga <b>dibuat dari layar HP dulu</b>, baru dibesarkan ke desktop. Karena hampir semua pelanggan UMKM datang dari HP, bukan komputer.</p>
+  <div class="blok">
+    <h2>Kenapa semuanya diarahkan ke WhatsApp?</h2>
+    <p>Karena di Indonesia jual beli terjadi di WhatsApp, bukan di formulir kontak. Website biasa mengirim email yang berminggu-minggu tidak dibuka. Percuma.</p>
+    <p>Di halaman buatan saya, waktu pelanggan menekan tombol pesan, <b>chat-nya sudah tersusun sendiri</b> &mdash; produk apa, berapa banyak, totalnya berapa, alamat ke mana. Kamu tinggal balas <b>&ldquo;siap, diproses&rdquo;</b>. Tidak ada lagi bolak-balik nanya dari nol.</p>
+    <p>Dan halamannya <b>dirancang dari layar HP dulu</b>, baru dibesarkan ke komputer. Karena pelanggan UMKM datang dari HP, hampir selalu.</p>
   </div>
 </div></section>
 
 <section id="harga"><div class="wrap">
   <div class="shead">
     <div class="eyebrow">Harga</div>
-    <h2>Satu harga, tanpa biaya tersembunyi</h2>
-    <p>Tidak ada paket bertingkat yang bikin bingung. Satu halaman lengkap, harga tetap.</p>
+    <h2>Satu harga, tertulis terang di depan</h2>
+    <p>Tidak ada paket bertingkat yang bikin bingung, tidak ada biaya yang muncul belakangan.</p>
   </div>
-  <div class="harga">
-    <div class="paket unggul" style="grid-column:1/-1">
-      <div class="tandanya">Harga tetap</div>
-      <h3>Landing page lengkap</h3>
-      <div class="rp">Rp 800.000</div>
-      <div class="lama">Selesai 3&ndash;5 hari kerja &middot; DP 50% untuk mulai</div>
-      <ul>
-        <li><i>&#10003;</i> Satu halaman penuh, desain mobile-first</li>
-        <li><i>&#10003;</i> Tombol WhatsApp melayang di semua layar</li>
-        <li><i>&#10003;</i> Form pesanan atau katalog + keranjang, sesuai jenis usaha</li>
-        <li><i>&#10003;</i> Pesanan tersusun otomatis jadi chat WhatsApp</li>
-        <li><i>&#10003;</i> Copywriting bahasa Indonesia</li>
-        <li><i>&#10003;</i> 2&times; revisi</li>
-        <li><i>&#10003;</i> Hosting gratis, atau dipasang di domain sendiri</li>
-      </ul>
+
+  <div class="kartuharga">
+    <div class="pita">Harga tetap</div>
+    <h3 style="font-size:16.5px;font-weight:700;color:var(--ink-2)">Halaman lengkap, sekali bayar</h3>
+    <div class="rp">Rp 800.000</div>
+    <div class="banding">Agensi biasanya minta <s>Rp 5.000.000 &ndash; Rp 15.000.000</s> untuk halaman serupa</div>
+    <div class="lama">Selesai 3&ndash;5 hari kerja &middot; DP 50% untuk mulai &middot; 2&times; revisi</div>
+    <ul class="isi">
+      <li><i class="cek"></i> Satu halaman penuh, dirancang mobile-first</li>
+      <li><i class="cek"></i> Tombol WhatsApp melayang, ikut ke mana pun pengunjung menggulir</li>
+      <li><i class="cek"></i> Form pesanan atau katalog + keranjang, menyesuaikan jenis usaha</li>
+      <li><i class="cek"></i> Pesanan tersusun otomatis jadi chat WhatsApp</li>
+      <li><i class="cek"></i> Copywriting bahasa Indonesia, bukan terjemahan template</li>
+      <li><i class="cek"></i> Hosting gratis selamanya, atau dipasang di domain sendiri</li>
+      <li><i class="cek"></i> Seluruh file diserahkan ke kamu &mdash; tidak dikunci di tempat saya</li>
+    </ul>
+    <div class="cta">
+      <a class="btn wa" href="https://wa.me/6285138231879?text=Halo%20Alim%2C%20saya%20mau%20minta%20mockup%20gratis.%0A%0ANama%20usaha%20saya%3A%20%0AJenis%20usaha%3A%20%0AKota%3A%20">Mulai dari mockup gratis</a>
     </div>
-    <div class="paket">
+  </div>
+
+  <div class="tambahan">
+    <div class="add">
       <h3>Maintenance bulanan</h3>
-      <div class="rp">Rp 150.000<small style="font-size:14px;font-weight:600;color:var(--ink-3)">/bulan</small></div>
-      <div class="lama">Opsional, boleh berhenti kapan saja</div>
-      <ul>
-        <li><i>&#10003;</i> 2 permintaan update konten per bulan</li>
-        <li><i>&#10003;</i> Ganti harga, menu, atau foto</li>
-        <li><i>&#10003;</i> Pantau halaman tetap hidup</li>
-      </ul>
+      <div class="n">Rp 150.000<small>/bulan</small></div>
+      <p>Opsional. 2 permintaan update per bulan &mdash; ganti harga, menu, atau foto. Berhenti kapan saja, tanpa penalti.</p>
     </div>
-    <div class="paket">
-      <h3>Setup domain</h3>
-      <div class="rp">Rp 200.000</div>
-      <div class="lama">Sekali bayar, opsional</div>
-      <ul>
-        <li><i>&#10003;</i> Pasang domain sendiri (misal namaanda.com)</li>
-        <li><i>&#10003;</i> Sertifikat HTTPS</li>
-        <li><i>&#10003;</i> Domain dibeli <b>atas nama Anda</b>, bukan atas nama saya</li>
-      </ul>
+    <div class="add">
+      <h3>Setup domain sendiri</h3>
+      <div class="n">Rp 200.000<small> sekali</small></div>
+      <p>Opsional. Pasang namausahamu.com berikut sertifikat HTTPS. Domainnya dibeli <b>atas nama kamu</b>, bukan atas nama saya.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="tanya"><div class="wrap">
+  <div class="shead">
+    <div class="eyebrow">Tanya jawab</div>
+    <h2>Yang biasanya ditanyakan duluan</h2>
+  </div>
+  <div class="faq">
+    <details>
+      <summary>Saya sudah punya Instagram. Masih perlu website?</summary>
+      <p>Instagram bagus untuk dilihat orang yang sudah kenal kamu. Masalahnya, calon pelanggan baru mencari di Google &mdash; &ldquo;laundry terdekat&rdquo;, &ldquo;katering nasi box Bogor&rdquo; &mdash; dan di sana Instagram hampir tidak muncul.</p>
+      <p>Lagi pula di Instagram daftar harga kamu terkubur di feed bulan lalu. Di halaman ini, harga dan cara pesan ada di satu tempat yang bisa kamu kirim linknya kapan saja.</p>
+    </details>
+    <details>
+      <summary>Kenapa cuma Rp 800.000? Biasanya jauh lebih mahal.</summary>
+      <p>Karena saya kerja sendiri &mdash; tidak ada kantor, tidak ada tim sales, tidak ada biaya perantara. Dan terus terang, saya sedang membangun portofolio, jadi harganya saya tahan di bawah pasaran.</p>
+      <p>Yang bisa kamu cek sendiri sebelum percaya: mockup-nya gratis. Kamu lihat hasil kerjanya lebih dulu, baru memutuskan.</p>
+    </details>
+    <details>
+      <summary>Nanti saya bisa ganti harga atau menu sendiri?</summary>
+      <p>Bisa, kalau kamu nyaman mengedit file. Kalau tidak, ada layanan maintenance Rp 150.000 per bulan &mdash; tinggal chat, saya yang ubah.</p>
+      <p>Yang jelas, kamu tidak dikunci. File-nya diserahkan ke kamu, jadi kalau suatu saat mau pindah ke orang lain, tidak ada yang menyandera apa pun.</p>
+    </details>
+    <details>
+      <summary>Ada biaya bulanan yang tersembunyi?</summary>
+      <p>Tidak ada. Hosting-nya gratis dan permanen. Maintenance dan domain sifatnya opsional, dan dua-duanya tertulis harganya di atas.</p>
+      <p>Kalau kamu mau pakai domain sendiri, perpanjangan tahunannya dibayar langsung ke penyedia domain atas nama kamu &mdash; bukan lewat saya.</p>
+    </details>
+    <details>
+      <summary>Kalau hasilnya tidak sesuai harapan?</summary>
+      <p>Itu sebabnya mockup dibuat lebih dulu dan gratis. Kamu sudah melihat arah desainnya sebelum mengeluarkan uang sepeser pun.</p>
+      <p>Setelah mulai dikerjakan, ada 2&times; revisi. Pelunasan baru dilakukan setelah kamu setuju dengan hasilnya.</p>
+    </details>
+    <details>
+      <summary>Saya di luar Jabodetabek, bisa?</summary>
+      <p>Bisa. Semua prosesnya lewat WhatsApp &mdash; kamu kirim daftar harga dan foto, saya kirim link. Tidak perlu bertemu.</p>
+    </details>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="blok" style="background:#0f3d2e">
+    <div class="eyebrow" style="color:#6ee7a5">Alat gratis, tanpa daftar</div>
+    <h2 style="color:#fff;margin-top:9px">Generator Link WhatsApp</h2>
+    <p style="color:#a9c9ba">Bikin link <b style="color:#fff">wa.me</b> dengan pesan yang sudah terisi otomatis, lengkap dengan QR code dan kode tombol siap tempel di website. Gratis untuk siapa saja, tidak perlu jadi klien.</p>
+    <div class="cta">
+      <a class="btn wa" href="tools/link-whatsapp.html">Buka alat gratisnya &rarr;</a>
     </div>
   </div>
 </div></section>
 
 <section><div class="wrap">
-  <div class="beda" style="background:#0f3d2e;color:#e8f5ee">
-    <div class="eyebrow" style="color:#6ee7a5">Alat gratis</div>
-    <h2 style="color:#fff;margin-top:8px">Generator Link WhatsApp &mdash; pakai gratis, tanpa daftar</h2>
-    <p style="color:#a9c9ba">Bikin link <b style="color:#fff">wa.me</b> dengan pesan yang sudah terisi otomatis, lengkap dengan QR code dan kode tombol siap tempel. Saya buat gratis untuk siapa saja, tidak perlu jadi klien dulu.</p>
-    <p style="color:#a9c9ba">Kalau nanti kamu butuh halaman katalog penuh yang pesanannya tersusun sendiri, baru kita ngobrol.</p>
-    <div class="cta" style="margin-top:20px">
-      <a class="btn" style="background:#25d366;color:#04301b" href="tools/link-whatsapp.html">Buka alat gratisnya &rarr;</a>
+  <div class="tutup">
+    <h2>Sebut nama usahamu. Sisanya saya yang kerjakan.</h2>
+    <p>Tidak perlu menyiapkan foto, daftar harga, atau apa pun dulu. Cukup nama usaha dan jenisnya &mdash; mockup-nya jadi dalam 1&ndash;2 hari, dan gratis.</p>
+    <div class="cta">
+      <a class="btn wa" href="https://wa.me/6285138231879?text=Halo%20Alim%2C%20saya%20mau%20minta%20mockup%20gratis.%0A%0ANama%20usaha%20saya%3A%20%0AJenis%20usaha%3A%20%0AKota%3A%20">WhatsApp 0851-3823-1879</a>
+      <a class="btn alt" href="mailto:alimtech32@gmail.com">Email alimtech32@gmail.com</a>
     </div>
   </div>
 </div></section>
 
-<section class="kontak"><div class="wrap">
-  <h2>Mau lihat mockup pakai nama bisnismu?</h2>
-  <p>Kirim nama bisnis dan apa yang kamu jual. Saya buatkan contohnya dulu — gratis, tanpa kewajiban lanjut.</p>
-  <div class="cta" style="justify-content:center">
-    <a class="btn wa" href="https://wa.me/6285138231879?text=Halo%20Alim%2C%20saya%20lihat%20portofolio%20landing%20page%20UMKM-nya.%20Saya%20mau%20tanya%20untuk%20bisnis%20saya.">💬 WhatsApp 0851-3823-1879</a>
-    <a class="btn alt" href="mailto:alimtech32@gmail.com">✉️ alimtech32@gmail.com</a>
-  </div>
-</div></section>
 </main>
 
 <footer><div class="wrap">
-  Dibuat dengan HTML biasa — tanpa plugin berat, tanpa biaya bulanan platform.
+  Dibuat dengan HTML biasa &mdash; tanpa plugin berat, tanpa langganan platform.<br>
+  Alim &middot; <a href="https://wa.me/6285138231879">0851-3823-1879</a> &middot; <a href="mailto:alimtech32@gmail.com">alimtech32@gmail.com</a>
 </div></footer>
+
+<a class="melayang" aria-label="Chat WhatsApp" href="https://wa.me/6285138231879?text=Halo%20Alim%2C%20saya%20mau%20tanya%20soal%20pembuatan%20halaman%20web%20untuk%20usaha%20saya.">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.6c1.8.9 3.8 1.4 5.8 1.4h.1c6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.9c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.3.9.9-4.2-.2-.4c-1-1.6-1.5-3.4-1.5-5.3 0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10.6-9.5 10.6zm5.5-7.6c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.1 1.4 3.3c.2.2 2.4 3.7 5.8 5.1.8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.8-.8 2.1-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<div class="barbawah">
+  <div class="harga-kecil"><b>Rp 800.000</b> Mockup dulu, gratis &middot; selesai 3&ndash;5 hari</div>
+  <a class="btn wa sm" href="https://wa.me/6285138231879?text=Halo%20Alim%2C%20saya%20mau%20minta%20mockup%20gratis.%0A%0ANama%20usaha%20saya%3A%20%0AJenis%20usaha%3A%20%0AKota%3A%20">Minta mockup</a>
+</div>
 
 </body>
 </html>

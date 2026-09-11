@@ -118,20 +118,22 @@ footer{border-top:1px solid var(--line);padding:30px 0 40px;font-size:13.5px;col
   .strip{grid-template-columns:repeat(4,1fr)}
 }
 @media(max-width:520px){nav{height:58px;gap:10px}.logo{font-size:15.5px;white-space:nowrap;gap:7px}.logo span{width:26px;height:26px;font-size:13px}nav .btn{padding:9px 13px;font-size:13px;white-space:nowrap}}.demo{top:auto;bottom:0;border-bottom-right-radius:0;border-top-right-radius:8px}
+
+.ic{width:1em;height:1em;fill:currentColor;vertical-align:-.14em;flex:none}
 </style>
 </head>
 <body>
 <div class="demo">Demo portofolio — bisnis fiktif</div>
 
 <header><nav class="wrap">
-  <a class="logo" href="#"><span>🌿</span> Sari Bumi</a>
-  <button class="btn btn-line btn-sm cart-btn" id="open">🛒 Keranjang <b id="count">0</b></button>
+  <a class="logo" href="#"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 2.8C11 2.8 4.7 7.2 4.7 14.3c0 1.9.5 3.5 1.4 4.8l-2.4 2.4 1.4 1.4 2.4-2.4c1.3.9 2.9 1.4 4.8 1.4 7.1 0 11.5-6.3 8.3-19.1ZM11.6 18c-.6 0-1.2-.1-1.7-.3 2.2-3.9 5.4-6.7 9-8.2-1.5 5-3.9 8.5-7.3 8.5Z"/></svg></span> Sari Bumi</a>
+  <button class="btn btn-line btn-sm cart-btn" id="open"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 3h2.9l.75 3H21a1 1 0 0 1 .97 1.25l-1.9 7.3A2.2 2.2 0 0 1 17.95 16H8.4a2.2 2.2 0 0 1-2.13-1.66L4.1 5H2.5V3ZM9 17.8a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm8.4 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z"/></svg> Keranjang <b id="count">0</b></button>
 </nav></header>
 
 <main><div class="wrap">
   <div class="hero">
     <div>
-      <div class="badge">🌿 Langsung dari 12 petani mitra</div>
+      <div class="badge"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 2.8C11 2.8 4.7 7.2 4.7 14.3c0 1.9.5 3.5 1.4 4.8l-2.4 2.4 1.4 1.4 2.4-2.4c1.3.9 2.9 1.4 4.8 1.4 7.1 0 11.5-6.3 8.3-19.1ZM11.6 18c-.6 0-1.2-.1-1.7-.3 2.2-3.9 5.4-6.7 9-8.2-1.5 5-3.9 8.5-7.3 8.5Z"/></svg> Langsung dari 12 petani mitra</div>
       <h1>Herbal asli, tanpa oplosan.</h1>
       <p>Madu hutan, jamu, dan minyak herbal yang kami ambil sendiri dari petani di Jawa dan Sumatera. Setiap batch punya nomor uji lab — bisa kamu cek.</p>
       <div class="cta-row">
@@ -139,7 +141,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 40px;font-size:13.5px;col
         <a class="btn btn-line" href="#faq">Cek keaslian</a>
       </div>
     </div>
-    <div class="hero-art"><div><b>🍯</b>Foto produk / kebun mitra<br><small>(diganti foto asli klien)</small></div></div>
+    <div class="hero-art"><div><b><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 11h20a10 10 0 0 1-5.8 9.1v.9a1 1 0 0 1-1 1H8.8a1 1 0 0 1-1-1v-.9A10 10 0 0 1 2 11Zm5.2-3c0-1.6 1-2.1 1-3.1S7.2 3.6 7.2 2h1.9c0 1.6-1 2.1-1 3.1s1 1.5 1 2.9H7.2Zm3.9 0c0-1.6 1-2.1 1-3.1s-1-1.3-1-2.9H13c0 1.6-1 2.1-1 3.1s1 1.5 1 2.9h-1.9Zm3.9 0c0-1.6 1-2.1 1-3.1s-1-1.3-1-2.9h1.9c0 1.6-1 2.1-1 3.1s1 1.5 1 2.9H15Z"/></svg></b>Foto produk / kebun mitra<br><small>(diganti foto asli klien)</small></div></div>
   </div>
 </div>
 
@@ -190,7 +192,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 40px;font-size:13.5px;col
   <div class="dfoot">
     <div class="tot"><span>Total</span><b id="total">Rp 0</b></div>
     <small>Ongkir dihitung setelah kamu kirim alamat lewat WhatsApp.</small>
-    <button class="btn btn-wa" id="checkout">💬 Pesan via WhatsApp</button>
+    <button class="btn btn-wa" id="checkout"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.9 2 11.6c0 2.6 1.4 5 3.6 6.5l-1 3.9 4.3-2.3c1 .2 2 .4 3.1.4 5.5 0 10-3.9 10-8.5S17.5 3 12 3Z"/></svg> Pesan via WhatsApp</button>
   </div>
 </aside>
 
@@ -199,21 +201,21 @@ footer{border-top:1px solid var(--line);padding:30px 0 40px;font-size:13.5px;col
   var WA = "6281200000000"; // diganti nomor asli klien
 
   var PRODUK = [
-    {id:1, n:"Madu Hutan Sumbawa 500ml", c:"madu", e:"🍯", h:145000, s:175000, t:"Best seller",
+    {id:1, n:"Madu Hutan Sumbawa 500ml", c:"madu", e:"<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 11h20a10 10 0 0 1-5.8 9.1v.9a1 1 0 0 1-1 1H8.8a1 1 0 0 1-1-1v-.9A10 10 0 0 1 2 11Zm5.2-3c0-1.6 1-2.1 1-3.1S7.2 3.6 7.2 2h1.9c0 1.6-1 2.1-1 3.1s1 1.5 1 2.9H7.2Zm3.9 0c0-1.6 1-2.1 1-3.1s-1-1.3-1-2.9H13c0 1.6-1 2.1-1 3.1s1 1.5 1 2.9h-1.9Zm3.9 0c0-1.6 1-2.1 1-3.1s-1-1.3-1-2.9h1.9c0 1.6-1 2.1-1 3.1s1 1.5 1 2.9H15Z"/></svg>", h:145000, s:175000, t:"Best seller",
      d:"Dipanen liar dari hutan Sumbawa. Kental, sedikit asam, tidak dipanaskan."},
-    {id:2, n:"Madu Kelengkeng 250ml", c:"madu", e:"🫙", h:78000, s:null, t:null,
+    {id:2, n:"Madu Kelengkeng 250ml", c:"madu", e:"<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 11h20a10 10 0 0 1-5.8 9.1v.9a1 1 0 0 1-1 1H8.8a1 1 0 0 1-1-1v-.9A10 10 0 0 1 2 11Zm5.2-3c0-1.6 1-2.1 1-3.1S7.2 3.6 7.2 2h1.9c0 1.6-1 2.1-1 3.1s1 1.5 1 2.9H7.2Zm3.9 0c0-1.6 1-2.1 1-3.1s-1-1.3-1-2.9H13c0 1.6-1 2.1-1 3.1s1 1.5 1 2.9h-1.9Zm3.9 0c0-1.6 1-2.1 1-3.1s-1-1.3-1-2.9h1.9c0 1.6-1 2.1-1 3.1s1 1.5 1 2.9H15Z"/></svg>", h:78000, s:null, t:null,
      d:"Manis lembut, favorit anak-anak. Cocok dicampur susu atau teh."},
-    {id:3, n:"Madu Propolis 100ml", c:"madu", e:"🐝", h:120000, s:null, t:null,
+    {id:3, n:"Madu Propolis 100ml", c:"madu", e:"<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 11h20a10 10 0 0 1-5.8 9.1v.9a1 1 0 0 1-1 1H8.8a1 1 0 0 1-1-1v-.9A10 10 0 0 1 2 11Zm5.2-3c0-1.6 1-2.1 1-3.1S7.2 3.6 7.2 2h1.9c0 1.6-1 2.1-1 3.1s1 1.5 1 2.9H7.2Zm3.9 0c0-1.6 1-2.1 1-3.1s-1-1.3-1-2.9H13c0 1.6-1 2.1-1 3.1s1 1.5 1 2.9h-1.9Zm3.9 0c0-1.6 1-2.1 1-3.1s-1-1.3-1-2.9h1.9c0 1.6-1 2.1-1 3.1s1 1.5 1 2.9H15Z"/></svg>", h:120000, s:null, t:null,
      d:"Ekstrak propolis murni untuk daya tahan tubuh. Pakai 3 tetes per hari."},
-    {id:4, n:"Jamu Kunyit Asam 6 btl", c:"jamu", e:"🥤", h:65000, s:null, t:null,
+    {id:4, n:"Jamu Kunyit Asam 6 btl", c:"jamu", e:"<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h12v7.5A5.5 5.5 0 0 1 10.5 16h-1A5.5 5.5 0 0 1 4 10.5V3Zm12 2h2.6a2.6 2.6 0 0 1 0 5.2H16V5ZM3 19h14v2H3v-2Z"/></svg>", h:65000, s:null, t:null,
      d:"Diseduh segar tiap Senin &amp; Kamis, tanpa pengawet. Simpan di kulkas."},
-    {id:5, n:"Jamu Beras Kencur 6 btl", c:"jamu", e:"🍶", h:65000, s:null, t:null,
+    {id:5, n:"Jamu Beras Kencur 6 btl", c:"jamu", e:"<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h12v7.5A5.5 5.5 0 0 1 10.5 16h-1A5.5 5.5 0 0 1 4 10.5V3Zm12 2h2.6a2.6 2.6 0 0 1 0 5.2H16V5ZM3 19h14v2H3v-2Z"/></svg>", h:65000, s:null, t:null,
      d:"Hangat di badan, enak diminum pagi sebelum aktivitas."},
-    {id:6, n:"Serbuk Jahe Merah 200g", c:"jamu", e:"🫚", h:48000, s:58000, t:"Hemat",
+    {id:6, n:"Serbuk Jahe Merah 200g", c:"jamu", e:"<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 2.8C11 2.8 4.7 7.2 4.7 14.3c0 1.9.5 3.5 1.4 4.8l-2.4 2.4 1.4 1.4 2.4-2.4c1.3.9 2.9 1.4 4.8 1.4 7.1 0 11.5-6.3 8.3-19.1ZM11.6 18c-.6 0-1.2-.1-1.7-.3 2.2-3.9 5.4-6.7 9-8.2-1.5 5-3.9 8.5-7.3 8.5Z"/></svg>", h:48000, s:58000, t:"Hemat",
      d:"Tanpa gula tambahan. Seduh 1 sdt dengan air panas."},
-    {id:7, n:"Minyak Kelapa Murni 250ml", c:"minyak", e:"🥥", h:55000, s:null, t:null,
+    {id:7, n:"Minyak Kelapa Murni 250ml", c:"minyak", e:"<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 11h20a10 10 0 0 1-5.8 9.1v.9a1 1 0 0 1-1 1H8.8a1 1 0 0 1-1-1v-.9A10 10 0 0 1 2 11Zm5.2-3c0-1.6 1-2.1 1-3.1S7.2 3.6 7.2 2h1.9c0 1.6-1 2.1-1 3.1s1 1.5 1 2.9H7.2Zm3.9 0c0-1.6 1-2.1 1-3.1s-1-1.3-1-2.9H13c0 1.6-1 2.1-1 3.1s1 1.5 1 2.9h-1.9Zm3.9 0c0-1.6 1-2.1 1-3.1s-1-1.3-1-2.9h1.9c0 1.6-1 2.1-1 3.1s1 1.5 1 2.9H15Z"/></svg>", h:55000, s:null, t:null,
      d:"Cold-pressed, bisa untuk masak, kulit, maupun rambut."},
-    {id:8, n:"Minyak Kayu Putih 100ml", c:"minyak", e:"🌱", h:38000, s:null, t:"Baru",
+    {id:8, n:"Minyak Kayu Putih 100ml", c:"minyak", e:"<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 2.8C11 2.8 4.7 7.2 4.7 14.3c0 1.9.5 3.5 1.4 4.8l-2.4 2.4 1.4 1.4 2.4-2.4c1.3.9 2.9 1.4 4.8 1.4 7.1 0 11.5-6.3 8.3-19.1ZM11.6 18c-.6 0-1.2-.1-1.7-.3 2.2-3.9 5.4-6.7 9-8.2-1.5 5-3.9 8.5-7.3 8.5Z"/></svg>", h:38000, s:null, t:"Baru",
      d:"Destilasi dari daun kayu putih Maluku. Hangat, tidak menyengat."}
   ];
 
@@ -237,7 +239,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 40px;font-size:13.5px;col
   function renderCart(){
     var ids = Object.keys(cart), total = 0, n = 0;
     if(!ids.length){
-      $('ditems').innerHTML = '<div class="empty">Keranjang masih kosong.<br>Pilih produk dulu ya. 🌿</div>';
+      $('ditems').innerHTML = '<div class="empty">Keranjang masih kosong.<br>Pilih produk dulu ya. <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 2.8C11 2.8 4.7 7.2 4.7 14.3c0 1.9.5 3.5 1.4 4.8l-2.4 2.4 1.4 1.4 2.4-2.4c1.3.9 2.9 1.4 4.8 1.4 7.1 0 11.5-6.3 8.3-19.1ZM11.6 18c-.6 0-1.2-.1-1.7-.3 2.2-3.9 5.4-6.7 9-8.2-1.5 5-3.9 8.5-7.3 8.5Z"/></svg></div>';
     } else {
       $('ditems').innerHTML = ids.map(function(id){
         var p = PRODUK.filter(function(x){return x.id == id;})[0], q = cart[id];
