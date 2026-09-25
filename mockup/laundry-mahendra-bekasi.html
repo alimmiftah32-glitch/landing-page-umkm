@@ -124,6 +124,23 @@ section{padding:48px 0}
 .kgrow .sat{font-size:15px;font-weight:700;color:var(--ink-2)}
 .hasil{margin-top:18px;background:var(--biru-soft);border:1px solid #c9d8ff;border-radius:13px;
   padding:15px 17px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.ekstra{margin-top:14px;display:grid;gap:10px}
+/* display:grid mengalahkan [hidden] dari UA stylesheet - tanpa baris ini,
+   kedua panel opsi tampil bersamaan walaupun sudah di-set hidden. */
+.ekstra[hidden]{display:none}
+.cek{display:flex;align-items:flex-start;gap:11px;cursor:pointer;font-size:14.2px;color:var(--ink-2);line-height:1.5}
+.cek input{position:absolute;opacity:0;pointer-events:none}
+.cek .kotak{width:20px;height:20px;border-radius:6px;border:2px solid var(--line-2);flex:none;margin-top:1px;
+  display:grid;place-items:center;transition:.14s;background:#fff}
+.cek .kotak::after{content:"";width:10px;height:6px;border-left:2.4px solid #fff;border-bottom:2.4px solid #fff;
+  transform:rotate(-45deg) scale(0);transition:.14s;margin-top:-3px}
+.cek input:checked+.kotak{background:var(--biru);border-color:var(--biru)}
+.cek input:checked+.kotak::after{transform:rotate(-45deg) scale(1)}
+.cek b{color:var(--oren);font-weight:800}
+.hemat{margin-top:11px;background:var(--oren-soft);border:1px solid #f7d9c1;border-radius:11px;
+  padding:11px 14px;font-size:13.5px;color:#8a4210;line-height:1.55}
+.hemat b{font-weight:800}
+.hemat s{opacity:.7}
 .hasil .ket{font-size:13px;color:var(--biru-ink);line-height:1.5}
 .hasil .tot{font-size:25px;font-weight:800;letter-spacing:-.03em;color:var(--biru);white-space:nowrap}
 .min{font-size:12.5px;color:var(--ink-3);margin-top:9px}
@@ -287,14 +304,28 @@ footer{padding:36px 0 30px;color:var(--ink-3);font-size:13px;text-align:center;b
   <div class="kalk">
     <span class="label">Pilih layanan</span>
     <div class="pilihan" id="layanan">
-      <label class="opsi on"><input type="radio" name="kil" value="10000" data-nm="Cuci setrika (1 hari)" checked>
+      <label class="opsi on"><input type="radio" name="kil" value="10000" data-nm="Cuci setrika (1 hari)" data-tipe="kg" checked>
         <span class="dot"></span><span class="nm"><b>Cuci setrika</b><span>Selesai 1 hari</span></span><span class="hg">Rp 10.000/kg</span></label>
-      <label class="opsi"><input type="radio" name="kil" value="9000" data-nm="Cuci setrika (2 hari)">
+      <label class="opsi"><input type="radio" name="kil" value="9000" data-nm="Cuci setrika (2 hari)" data-tipe="kg">
         <span class="dot"></span><span class="nm"><b>Cuci setrika</b><span>Selesai 2 hari</span></span><span class="hg">Rp 9.000/kg</span></label>
-      <label class="opsi"><input type="radio" name="kil" value="8000" data-nm="Setrika saja (1 hari)">
+      <label class="opsi"><input type="radio" name="kil" value="8000" data-nm="Setrika saja (1 hari)" data-tipe="kg">
         <span class="dot"></span><span class="nm"><b>Setrika saja</b><span>Selesai 1 hari</span></span><span class="hg">Rp 8.000/kg</span></label>
-      <label class="opsi"><input type="radio" name="kil" value="7000" data-nm="Setrika saja (2 hari)">
+      <label class="opsi"><input type="radio" name="kil" value="7000" data-nm="Setrika saja (2 hari)" data-tipe="kg">
         <span class="dot"></span><span class="nm"><b>Setrika saja</b><span>Selesai 2 hari</span></span><span class="hg">Rp 7.000/kg</span></label>
+      <label class="opsi" style="grid-column:1/-1"><input type="radio" name="kil" value="30000" data-nm="Cuci kering" data-tipe="paket">
+        <span class="dot"></span><span class="nm"><b>Cuci kering</b><span>Promo Senin&ndash;Kamis &middot; dihitung per 8 kg</span></span><span class="hg">Rp 30.000/8 kg</span></label>
+    </div>
+
+    <div class="ekstra" id="opsiKg">
+      <label class="cek"><input type="checkbox" id="pakaiJemput" checked><span class="kotak"></span>
+        <span>Pakai antar jemput <b>&mdash; diskon 20%</b></span></label>
+    </div>
+
+    <div class="ekstra" id="opsiKering" hidden>
+      <label class="cek"><input type="checkbox" id="keringJemput"><span class="kotak"></span>
+        <span>Dijemput ke rumah <b>+Rp 5.000 / 8 kg</b></span></label>
+      <label class="cek"><input type="checkbox" id="keringAntar"><span class="kotak"></span>
+        <span>Diantar balik <b>+Rp 5.000 / 8 kg</b></span></label>
     </div>
 
     <div class="kgrow">
@@ -305,12 +336,13 @@ footer{padding:36px 0 30px;color:var(--ink-3);font-size:13px;text-align:center;b
       </div>
       <span class="sat">kg</span>
     </div>
-    <p class="min">Minimal 5 kg. Belum yakin beratnya? Perkirakan saja &mdash; ditimbang ulang waktu dijemput.</p>
+    <p class="min" id="catatanMin">Minimal 5 kg. Belum yakin beratnya? Perkirakan saja &mdash; ditimbang ulang waktu dijemput.</p>
 
     <div class="hasil">
       <span class="ket" id="ketKiloan">Cuci setrika &middot; 5 kg &times; Rp 10.000</span>
       <span class="tot" id="totKiloan">Rp 50.000</span>
     </div>
+    <p class="hemat" id="hemat" hidden></p>
     <button class="btn" id="tambahKiloan" style="width:100%;margin-top:14px">Masukkan ke pesanan</button>
   </div>
 </div></section>
@@ -486,16 +518,69 @@ document.getElementById("filter").addEventListener("click", function (e) {
 // --- kalkulator kiloan ---
 var berat = document.getElementById("berat");
 function tarif() { return document.querySelector('input[name="kil"]:checked'); }
+
+var DISKON = 0.2;        // diskon antar jemput, dari poster "DISKON 20%"
+var BLOK_KERING = 8;     // cuci kering dihitung per 8 kg
+var ONGKOS_KERING = 5000; // jemput / antar, masing-masing per 8 kg
+
+/**
+ * Dua cara hitung yang berbeda:
+ *  - "kg"    : per kilo, minimal 5 kg, dapat diskon 20% kalau pakai antar jemput
+ *  - "paket" : cuci kering, dibulatkan ke atas per 8 kg, ongkos jemput/antar terpisah
+ */
 function hitungKiloan() {
   var t = tarif();
+  var paket = t.dataset.tipe === "paket";
   var kg = Math.max(0, parseInt(berat.value, 10) || 0);
-  var bayar = Math.max(kg, kg > 0 ? 5 : 0);           // minimal 5 kg kalau memesan
-  var total = bayar * Number(t.value);
-  document.getElementById("ketKiloan").textContent =
-    t.dataset.nm + " · " + (kg > 0 ? bayar : 0) + " kg × " + rp(t.value)
-    + (kg > 0 && kg < 5 ? " (minimal 5 kg)" : "");
+
+  document.getElementById("opsiKg").hidden = paket;
+  document.getElementById("opsiKering").hidden = !paket;
+  document.getElementById("catatanMin").innerHTML = paket
+    ? "Dihitung per 8 kg dan dibulatkan ke atas &mdash; 9 kg tetap terhitung 2 blok. Promo ini berlaku Senin sampai Kamis."
+    : "Minimal 5 kg. Belum yakin beratnya? Perkirakan saja &mdash; ditimbang ulang waktu dijemput.";
+
+  var ket, normal, total, rincian, nama = t.dataset.nm, kgBayar;
+
+  if (paket) {
+    var blok = kg > 0 ? Math.ceil(kg / BLOK_KERING) : 0;
+    var jemput = document.getElementById("keringJemput").checked;
+    var antar = document.getElementById("keringAntar").checked;
+    var ongkos = (jemput ? ONGKOS_KERING : 0) + (antar ? ONGKOS_KERING : 0);
+
+    kgBayar = kg;
+    normal = blok * Number(t.value);
+    total = normal + blok * ongkos;
+    nama = "Cuci kering" + (ongkos ? (jemput && antar ? " (jemput + antar)" : jemput ? " (dijemput)" : " (diantar)") : " (drop off sendiri)");
+    ket = kg + " kg = " + blok + " × " + rp(t.value);
+    if (ongkos) ket += " + antar jemput " + blok + " × " + rp(ongkos);
+    rincian = ket;
+
+    var h = document.getElementById("hemat");
+    h.hidden = true;
+  } else {
+    kgBayar = kg > 0 ? Math.max(kg, 5) : 0;
+    var tarifKg = Number(t.value);
+    var diskon = document.getElementById("pakaiJemput").checked;
+    normal = kgBayar * tarifKg;
+    total = diskon ? Math.round(normal * (1 - DISKON)) : normal;
+
+    ket = kgBayar + " kg × " + rp(tarifKg) + (kg > 0 && kg < 5 ? " (minimal 5 kg)" : "");
+    rincian = kgBayar + " kg × " + rp(tarifKg) + (diskon ? ", diskon 20%" : "");
+    if (diskon) nama += " — antar jemput";
+
+    var hm = document.getElementById("hemat");
+    if (diskon && total > 0) {
+      hm.hidden = false;
+      hm.innerHTML = "Harga normal <s>" + rp(normal) + "</s>, hemat <b>" + rp(normal - total)
+        + "</b> dengan diskon antar jemput. Berlaku untuk kuota 40 kg pertama setiap hari.";
+    } else {
+      hm.hidden = true;
+    }
+  }
+
+  document.getElementById("ketKiloan").textContent = t.dataset.nm + " · " + ket;
   document.getElementById("totKiloan").textContent = rp(total);
-  return { nama: t.dataset.nm, kg: bayar, tarif: Number(t.value), total: total };
+  return { nama: nama, kg: kgBayar, rincian: rincian, total: total };
 }
 document.getElementById("layanan").addEventListener("change", function (e) {
   document.querySelectorAll(".opsi").forEach(function (o) {
@@ -504,6 +589,9 @@ document.getElementById("layanan").addEventListener("change", function (e) {
   hitungKiloan();
 });
 berat.addEventListener("input", hitungKiloan);
+["pakaiJemput", "keringJemput", "keringAntar"].forEach(function (id) {
+  document.getElementById(id).addEventListener("change", hitungKiloan);
+});
 document.getElementById("kurang").addEventListener("click", function () {
   berat.value = Math.max(0, (parseInt(berat.value, 10) || 0) - 1); hitungKiloan();
 });
@@ -522,7 +610,7 @@ document.getElementById("tambahKiloan").addEventListener("click", function () {
 function daftarPesanan() {
   var baris = [];
   if (kiloan) {
-    baris.push({ n: kiloan.nama, d: kiloan.kg + " kg × " + rp(kiloan.tarif), v: kiloan.total });
+    baris.push({ n: kiloan.nama, d: kiloan.rincian, v: kiloan.total });
   }
   Object.keys(jml).forEach(function (i) {
     if (!jml[i]) return;
