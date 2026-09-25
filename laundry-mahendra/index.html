@@ -540,11 +540,10 @@ footer a{color:var(--biru);font-weight:900;text-decoration:none}
         <div class="fld">
           <label for="jam">Jam jemput</label>
           <select id="jam">
-            <option>07.00 &ndash; 09.00</option>
-            <option selected>09.00 &ndash; 12.00</option>
-            <option>12.00 &ndash; 15.00</option>
-            <option>15.00 &ndash; 18.00</option>
-            <option>18.00 &ndash; 21.00</option>
+            <option data-akhir="9">08.00 &ndash; 09.00</option>
+            <option data-akhir="15">12.00 &ndash; 15.00</option>
+            <option data-akhir="19">16.00 &ndash; 19.00</option>
+            <option data-akhir="21">20.00 &ndash; 21.00</option>
           </select>
         </div>
       </div>
@@ -858,13 +857,24 @@ function gambar() {
   document.getElementById("barKet").textContent = baris.length ? baris.length + " layanan dipilih" : "Belum ada pesanan";
 }
 
-/* tanggal dibangun dari waktu LOKAL - toISOString() itu UTC, di WIB mundur sehari */
+/* tanggal dibangun dari waktu LOKAL - toISOString() itu UTC, di WIB mundur sehari.
+   Jam jemput langsung menunjuk sesi terdekat yang belum selesai; lewat dari sesi
+   terakhir, tanggalnya pindah ke besok. */
 (function () {
   var d = new Date();
   var p = function (n) { return String(n).padStart(2, "0"); };
-  var hariIni = d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate());
+  var tgl = function (x) { return x.getFullYear() + "-" + p(x.getMonth() + 1) + "-" + p(x.getDate()); };
   var t = document.getElementById("tanggal");
-  t.value = hariIni; t.min = hariIni;
+  var jam = document.getElementById("jam");
+  var sekarang = d.getHours() + d.getMinutes() / 60;
+  var pilih = -1;
+  for (var i = 0; i < jam.options.length; i++) {
+    if (Number(jam.options[i].getAttribute("data-akhir")) > sekarang) { pilih = i; break; }
+  }
+  t.min = tgl(d);
+  if (pilih < 0) { d.setDate(d.getDate() + 1); pilih = 0; }
+  t.value = tgl(d);
+  jam.selectedIndex = pilih;
 })();
 
 document.getElementById("kirim").addEventListener("click", function () {
