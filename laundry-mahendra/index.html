@@ -10,7 +10,7 @@
 <meta property="og:description" content="Kiloan dan satuan, dari bedcover sampai karpet. Antar jemput gratis 2 km, free detergen &amp; softener. Rating 5,0 dari 72 ulasan Google.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://laundry-mahendra.limstudioid.surge.sh/">
-<meta property="og:image" content="https://laundry-mahendra.limstudioid.surge.sh/img/papan.jpg">
+<meta property="og:image" content="https://laundry-mahendra.limstudioid.surge.sh/img/toko.jpg">
 <link rel="canonical" href="https://laundry-mahendra.limstudioid.surge.sh/">
 <link rel="icon" type="image/png" href="img/ikon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
   "@context": "https://schema.org",
   "@type": "DryCleaningOrLaundry",
   "name": "Laundry Mahendra Bekasi",
-  "image": "https://laundry-mahendra.limstudioid.surge.sh/img/papan.jpg",
+  "image": "https://laundry-mahendra.limstudioid.surge.sh/img/toko.jpg",
   "url": "https://laundry-mahendra.limstudioid.surge.sh/",
   "telephone": "+6285691417976",
   "address": {
@@ -124,6 +124,8 @@ section{padding:42px 0}
 .eyebrow{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--biru);font-weight:900}
 .shead h2{font-size:clamp(25px,5.4vw,34px);margin:7px auto 9px;max-width:18ch}
 .shead p{color:var(--abu);max-width:44ch;margin:0 auto;font-weight:600}
+.shead .aturan{display:inline-block;margin-top:12px;max-width:none;background:var(--kuning-mud);border:1.5px solid var(--kuning-garis);
+  color:var(--coklat-2);border-radius:14px;padding:9px 14px;font-size:13.5px;font-weight:800;line-height:1.45}
 
 /* ---------- kartu besar ---------- */
 .kalk,.keranjang{background:var(--putih);border-radius:26px;padding:22px 18px;box-shadow:var(--bayang);
@@ -188,6 +190,16 @@ section{padding:42px 0}
 .hemat{margin-top:11px;background:var(--biru-mud);border-radius:16px;padding:12px 15px;font-size:13.5px;
   color:var(--biru-tua);line-height:1.55;text-align:center;font-weight:600}
 .hemat[hidden]{display:none}
+.ongkir{margin-top:16px}
+.ongkir[hidden]{display:none}
+.mode3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mode3 label{cursor:pointer;display:flex}
+.mode3 input{position:absolute;opacity:0;pointer-events:none}
+.mode3 span{flex:1;text-align:center;border:2.5px solid var(--garis);border-radius:16px;padding:10px 5px;background:#fff;
+  font-weight:800;font-size:13.5px;line-height:1.3;color:var(--tinta)}
+.mode3 span small{display:block;font-size:11.5px;color:var(--abu);font-weight:700;margin-top:3px}
+.mode3 input:checked+span{border-color:var(--biru);background:var(--biru-mud);color:var(--biru)}
+.mode3 input:focus-visible+span{outline:3px solid rgba(47,123,214,.35);outline-offset:2px}
 .hemat b{font-weight:900;color:var(--biru)}
 .hemat s{opacity:.65}
 
@@ -250,7 +262,7 @@ section{padding:42px 0}
 .lkartu h3 svg{width:20px;height:20px;fill:var(--biru);flex:none}
 .lkartu p{color:var(--abu);font-size:14.5px;font-weight:600}
 .fototoko{border-radius:18px;overflow:hidden;margin:-4px -4px 16px}
-.fototoko img{width:100%;height:auto;aspect-ratio:900/490;object-fit:cover}
+.fototoko img{width:100%;height:auto;object-fit:cover}
 .jam{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:14.5px}
 .jam li{display:flex;justify-content:space-between;gap:12px;color:var(--abu);background:var(--bg);padding:10px 13px;
   border-radius:12px;font-weight:700}
@@ -427,6 +439,7 @@ footer a{color:var(--biru);font-weight:900;text-decoration:none}
     <div class="eyebrow">Antar jemput</div>
     <h2>Hitung dulu, biar tidak penasaran</h2>
     <p>Pilih layanannya, lalu masukkan perkiraan berat. Biayanya langsung terlihat, sudah termasuk promo antar jemput.</p>
+    <p class="aturan">Antar jemput gratis maksimal 2 km. Lebih dari itu ditambah Rp 10.000/km, dihitung otomatis di form penjemputan.</p>
   </div>
 
   <div class="kalk">
@@ -445,6 +458,15 @@ footer a{color:var(--biru);font-weight:900;text-decoration:none}
       <span class="sat">kg</span>
     </div>
     <p class="min" id="catatanMin"></p>
+
+    <div class="ongkir" id="pilihOngkir" hidden>
+      <span class="label">Jemput &amp; antar</span>
+      <div class="mode3">
+        <label><input type="radio" name="ja" value="dua" checked><span>Jemput &amp; antar<small>+Rp 10.000/8 kg</small></span></label>
+        <label><input type="radio" name="ja" value="jemput"><span>Jemput saja<small>+Rp 5.000/8 kg</small></span></label>
+        <label><input type="radio" name="ja" value="antar"><span>Antar saja<small>+Rp 5.000/8 kg</small></span></label>
+      </div>
+    </div>
 
     <div class="hasil">
       <span class="ket" id="ketKiloan"></span>
@@ -575,7 +597,7 @@ footer a{color:var(--biru);font-weight:900;text-decoration:none}
         <li><span>Cuci saja<small>Tanpa pengering</small></span><b>Rp 12.000<small>/8 kg</small></b></li>
         <li><span>Pengering saja<small>Hanya dikeringkan</small></span><b>Rp 13.000<small>/8 kg</small></b></li>
         <li><span>Cuci + kering<small>Pakai mesin sendiri</small></span><b>Rp 25.000<small>/8 kg</small></b></li>
-        <li><span>Drop off<small>Cuci, kering, lipat &mdash; kami yang kerjakan</small></span><b>Rp 32.000<small>/8 kg</small></b></li>
+        <li><span>Drop off<small>Cuci kering, kami yang kerjakan (tanpa lipat)</small></span><b>Rp 30.000<small>/8 kg</small></b></li>
       </ul>
       <p class="ikecil">Detergen dan softener gratis. Dihitung per mesin 8 kg.</p>
     </div>
@@ -585,7 +607,7 @@ footer a{color:var(--biru);font-weight:900;text-decoration:none}
 <section><div class="wrap">
   <div class="lok">
     <div class="lkartu">
-      <div class="fototoko"><img src="img/papan.jpg" alt="Papan nama Laundry Mahendra di Jl. Raya Angkatan Laut, Jatimakmur" width="900" height="490" loading="lazy"></div>
+      <div class="fototoko"><img src="img/toko.jpg" alt="Tampak depan Laundry Mahendra di Jl. Raya Angkatan Laut, Jatimakmur" width="1000" height="481" loading="lazy"></div>
       <h3><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Alamat</h3>
       <p>Jl. Raya Angkatan Laut No. 99,<br>Jatimakmur Permai, Kec. Pondok Gede,<br>Kota Bekasi, Jawa Barat 17413</p>
       <div class="cta">
@@ -709,19 +731,26 @@ function hitungKiloan() {
   var hemat = document.getElementById("hemat");
   var nama, ket, rincian, total, kgBayar;
 
+  document.getElementById("pilihOngkir").hidden = !s.blok;
+
   if (s.blok) {
+    // jemput & antar dihitung terpisah, masing-masing per 8 kg
+    var ja = document.querySelector('input[name="ja"]:checked').value;
+    var ongkos = ja === "jemput" ? s.jemput : ja === "antar" ? s.antar : s.jemput + s.antar;
+    var cara = ja === "jemput" ? "jemput saja" : ja === "antar" ? "antar saja" : "jemput & antar";
     var blok = kg > 0 ? Math.ceil(kg / s.blok) : 0;
-    var perBlok = s.h + s.jemput + s.antar;
+    var perBlok = s.h + ongkos;
     kgBayar = kg;
     total = blok * perBlok;
     nama = s.n + " promo Senin–Kamis";
     ket = kg + " kg = " + blok + " × " + rp(perBlok);
-    rincian = kg + " kg = " + blok + " × " + s.blok + " kg × " + rp(perBlok) + ", sudah termasuk jemput & antar";
+    rincian = kg + " kg = " + blok + " × " + s.blok + " kg × " + rp(perBlok) + ", " + cara;
     document.getElementById("catatanMin").innerHTML =
       "Dihitung per " + s.blok + " kg dan dibulatkan ke atas &mdash; 9 kg terhitung 2 &times; 8 kg.";
     hemat.hidden = false;
-    hemat.innerHTML = "Per " + s.blok + " kg: cuci kering <b>" + rp(s.h) + "</b> + jemput " + rp(s.jemput)
-      + " + antar " + rp(s.antar) + ".";
+    hemat.innerHTML = "Per " + s.blok + " kg: cuci kering <b>" + rp(s.h) + "</b>"
+      + (ja !== "antar" ? " + jemput " + rp(s.jemput) : "")
+      + (ja !== "jemput" ? " + antar " + rp(s.antar) : "") + ".";
   } else {
     kgBayar = kg > 0 ? Math.max(kg, MIN_KG) : 0;
     var normal = kgBayar * s.h;
@@ -746,6 +775,7 @@ function hitungKiloan() {
 }
 
 berat.addEventListener("input", hitungKiloan);
+document.getElementById("pilihOngkir").addEventListener("change", hitungKiloan);
 document.getElementById("kurang").addEventListener("click", function () {
   berat.value = Math.max(0, (parseInt(berat.value, 10) || 0) - 1); hitungKiloan();
 });
